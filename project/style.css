@@ -1,0 +1,116 @@
+/* General body styles */
+body {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(184deg, rgba(0, 0, 0, 1) 0%, rgba(0, 91, 95, 1) 81%);
+
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    color: white;
+    margin: 20px;
+    font-size: 22px;
+    font-family: Verdana;
+    background-size: 100% 100%;
+    padding: 30px;
+}
+
+/* Header styles */
+header {
+    /* background-color: #ffffff; */
+    text-align: center;
+    color: #ffffff;
+    background-color: #5b7368;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Logo styles */
+.logo a {
+    font-family: Tahoma;
+    font-size: 40px;
+    /* padding: 0px -10px; */
+    /* background-color: #ffffff; */
+    color: #2dbc7e;
+    text-decoration: none;
+}
+
+/* Main navigation styles */
+.main-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li a {
+    border-right: none;
+    color: #ffffff;
+    padding: 50px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.main-nav li a:hover {
+    background-color: #628bcc;
+}
+
+.main-nav li.active a {
+    background-color: #f5a83d;
+}
+
+/* Contact link styles */
+.contact-link {
+    color: #f5a83d;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Disease information section styles */
+.disease-info {
+    font-size: 30px;
+    margin-top: 100px;
+    /* background-color:  #76a1e6; */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Symptoms section styles */
+.symptoms {
+    font-size: 30px;
+    margin-top: 20px;
+    /* background-color: #6992c1; */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Treatment section styles */
+.treatment {
+    font-size: 30px;
+    margin-top: 20px;
+    /* background-color: #627fa5; */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Treatment list styles */
+.treatment ul {
+    
+    margin: 0;
+    padding: 20px;
+}
+
+.treatment li {
+    padding: 1px 0;
+}
+
+/* Additional section styles (if needed) */
+/* ... Add styles for additional sections ... */
+
+/* Responsiveness styles */
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .main-nav {
+        flex-direction: column;
+    }
+}
