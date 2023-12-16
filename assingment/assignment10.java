@@ -1,4 +1,4 @@
-package assingment;
+
 import java.util.Scanner;
 /*
 Ziad Mostafa Elsaid

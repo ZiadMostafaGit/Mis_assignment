@@ -1,4 +1,3 @@
-package assingment;
 import java.util.Scanner;
 /**
  *
