@@ -1,8 +1,6 @@
 
 public class Methods {
-   public Methods(){
-    System.out.println("Hello from Methods class");
-   }
+   
     public int NorthwestCorner(int[][]Matrix,int[]cap,int[]req){
 
 
