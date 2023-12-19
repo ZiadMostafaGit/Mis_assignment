@@ -20,9 +20,19 @@ public class MainFile {
         }
         Methods methods=new Methods();
 
-        int first_solution=methods.NorthwestCorner(Matix,cap,req);
-        System.out.println("The First Solution:"+first_solution);
+        // int first_solution=methods.NorthwestCorner(Matix,cap,req);
+        // System.out.println("The First Solution:"+first_solution);
 
+        // int [][]arr=new int[3][3];
+        // arr=Methods.IsSqare(Matix);
+        // Methods.Print2dMatrix(arr);
+        
+    
+    
+    
+    
+    
+    
     }
     
 }
