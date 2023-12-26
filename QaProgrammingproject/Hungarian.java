@@ -1,10 +1,16 @@
+import java.util.*;
 public class Hungarian{
     private int[][]TheMatrix;
     private int[]rows;
     private int[]colmns;
     private int FinalAnswer;
     public Hungarian(int[][]Matrix){
-        this.TheMatrix=Matrix;
+        this.TheMatrix=new int[3][3];
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                this.TheMatrix[i][j]=Matrix[i][j];
+            }
+        }        
         
         this.rows=new int[3];
         this.colmns=new int[3];
@@ -35,7 +41,7 @@ for(int i=0;i<3;i++){
 
 }
 
-
+Print2dMatrix(Matrix);
 
 }
 
@@ -61,7 +67,7 @@ public void ColReduction(int [][]Matrix){
 
 
     }
-
+Print2dMatrix(Matrix);
 
 }
 
@@ -97,7 +103,11 @@ for(int i=0;i<3;i++){
         index=0;
 }
 
+for(int i=0;i<3;i++){
+        System.out.print(this.rows[i]+" ");
 
+}
+System.out.println();
 
 }
 
@@ -121,6 +131,13 @@ for(int i=0;i<3;i++){
         index=0;
 }
 
+
+
+for(int i=0;i<3;i++){
+        System.out.print(this.colmns[i]+" ");
+
+}
+System.out.println();
 
 
 }
@@ -159,20 +176,26 @@ for(int i=0;i<3;i++)
 
 public void  ChangeTheMatrix(int[][]Matrix){
 
-  int intersect_row=this.rows[0];
+  int intersect_row=0;
+  int temp=this.rows[0];
+
         for(int i=1;i<3;i++)
         {
-            if(this.rows[i]>intersect_row)
+            if(this.rows[i]>temp)
             {   
                 intersect_row=i;
 
             }
 
         }
-        int intersect_col=this.colmns[0];
+
+
+        int intersect_col=0;
+        int temp2=this.colmns[0];
+
         for(int j=1;j<3;j++)
         {
-            if(this.colmns[j]>intersect_col)
+            if(this.colmns[j]>temp2)
             {   
                 intersect_col=j;
 
@@ -184,7 +207,16 @@ public void  ChangeTheMatrix(int[][]Matrix){
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (Matrix[i][j] == 0 && !(i == intersect_row && j == intersect_col)) {
+                if (Matrix[i][j] == 0)
+                {
+
+                }
+               else if(i==intersect_row&&j==intersect_col) 
+                {
+
+                }
+                else
+                {
                     min_of_unlined_cells = Math.min(Matrix[i][j], min_of_unlined_cells);
                 }
             }
@@ -192,18 +224,31 @@ public void  ChangeTheMatrix(int[][]Matrix){
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (Matrix[i][j] == 0 && !(i == intersect_row && j == intersect_col)) {
-                    Matrix[i][j] -= min_of_unlined_cells;
+                if (Matrix[i][j] == 0)
+                {
+
+                }
+               else if(i==intersect_row&&j==intersect_col) 
+                {
+
+                }
+                else
+                {
+                    Matrix[i][j]-=min_of_unlined_cells;
+
                 }
             }
         }
         Matrix[intersect_row][intersect_col] += min_of_unlined_cells;
+        System.out.println("from the change the matrix method");
+        System.out.println(min_of_unlined_cells+" "+intersect_row+" "+intersect_col);
+        Print2dMatrix(Matrix);
+
 
 }
 
 public void PrebareMatrixToFinalStep(int[][]Matrix)
 {
-
    
     boolean flag=TestForAnOptimalAssigment(Matrix);
 
@@ -218,11 +263,6 @@ public void PrebareMatrixToFinalStep(int[][]Matrix)
             PrebareMatrixToFinalStep(Matrix);
 
     }
-
-
-
-
-
 
 }
 
@@ -245,23 +285,26 @@ public void MakingTheFinalAssignment(int[][]Matrix){
                {
                     Matrix[i][j]=this.TheMatrix[i][j];
                     index[j]=1;
-                    while(j<2&&i<2){
+                   
+                   
+                   
+                   
+                    while(j<2){
                         Matrix[i][j+1]=0;
-                        i++;
+                        j++;
                     }
-               }
-                
+               }              
 
             }
+            System.out.print(Matrix[i][j]+" ");
 
 
         }
+    System.out.println();
 
+}
 
-
-
-    }
-
+Print2dMatrix(Matrix);
 
 }
 public void CountTheFinalAssignment(int[][]Matrix){
@@ -275,10 +318,12 @@ public void CountTheFinalAssignment(int[][]Matrix){
 
 }
 public int  TheHungarianAlgorihtm(int [][]Matrix){
-
+Print2dMatrix(this.TheMatrix);
 this.RowReduction(Matrix);
 this.ColReduction(Matrix);
 this.PrebareMatrixToFinalStep(Matrix);
+System.out.println("==============================");
+Print2dMatrix(Matrix);
 this.MakingTheFinalAssignment(Matrix);
 this.CountTheFinalAssignment(Matrix);
 return this.FinalAnswer;
@@ -300,19 +345,4 @@ public static void main(String[] args) {
 
     System.out.println("resulte is:"+res);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
