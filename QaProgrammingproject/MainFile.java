@@ -1,29 +1,20 @@
-import java.util.Scanner;
-
 
 public class MainFile {
 
 
-    public static void main(String[] args) {
-        int[][]Matix=new int[3][3];
+    // public static void main(String[] args) {
+    //     int[][] Matrix = new int[][]{
+    //         {30, 25, 10},
+    //         {15, 10, 20},
+    //         {25, 20, 15}
+    //     };
         
-        Scanner input=new Scanner(System.in);    
-        for(int i=0;i<3;i++){
-            for(int j=0;j<3;j++){
-                System.out.println("enter Matrix["+i+"]["+j+"]");
-                Matix[i][j]=input.nextInt();
+       
+    //     Hungarian hungarian=new Hungarian(Matrix);
+    //     int res=hungarian.TheHungarianAlgorihtm(Matrix);
 
-            }
-        }
-
-        Hungarian hungarian=new Hungarian();
-        int[][]reducted_matrix=hungarian.RowReduction(Matix);
-        Hungarian.Print2dMatrix(reducted_matrix);
-        System.out.println("=============================================================");
-        hungarian.ColReduction(reducted_matrix);
-        Hungarian.Print2dMatrix(reducted_matrix);
-
-
+    //     System.out.println("resulte is:"+res);
+    // }
 
 
 
@@ -47,4 +38,4 @@ public class MainFile {
     
     }
     
-}
+
