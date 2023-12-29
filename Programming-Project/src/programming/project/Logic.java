@@ -1,9 +1,19 @@
-public class Hungarian{
-    private int[][]TheMatrix;
-    private int[]rows;
-    private int[]colmns;
-    private int FinalAnswer;
-    public Hungarian(int[][]Matrix){
+
+package programming.project;
+
+/**
+ *
+ * @author ziad
+ */
+public class Logic {
+    
+    private int[][]TheMatrix;//Stroe the input Matrix for later
+    private int[]rows;// use to find the intersection point
+    private int[]colmns;//use to find the intersection point
+    private int FinalAnswer;//store the final answer
+    
+    
+    public Logic(int[][]Matrix){
         this.TheMatrix=new int[3][3];
         for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
@@ -301,6 +311,8 @@ public void CountTheFinalAssignment(int[][]Matrix){
 
 
 }
+
+
 public int  TheHungarianAlgorihtm(int [][]Matrix){
 this.RowReduction(Matrix);
 this.ColReduction(Matrix);
@@ -310,6 +322,7 @@ this.CountTheFinalAssignment(Matrix);
 return this.FinalAnswer;
 
 }
-
-
+    
+    
+    
 }
