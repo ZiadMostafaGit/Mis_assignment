@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 10;
+        padding: 20;
+        color: #ffffff;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 20px;
+	background-size: cover; 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+    }
+
+    header {
+        background: #113d6a;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 1px 4px 9px rgb(223, 140, 56);
+        border-radius: 20px 20px;
+        position: sticky;
+        top: 0;
+        /* Stick to the top of the viewport */
+        z-index: 100;/* Ensure it appears above other elements */
+    }
+
+    .logo a {
+        color: #DF8C38;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .main-nav li a.active {
+    color: #ff9e00;
+}
+
+    nav {
+        display: flex;
+    }
+
+    .main-nav {
+        list-style: none;
+        padding: 15;
+        display: flex;
+    }
+
+    /*distance btw each page in the menu*/
+
+    .main-nav li {
+        margin-right: 15px;
+    }
+
+    .main-nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: .9em;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .main-nav a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #DF9408;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    /* line under each page */
+
+    .main-nav a:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    .active:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+
+    /* Responsive Styling */
+
+    @media screen and (max-width: 768px) {
+        header {
+            padding: 10px 20px;
+            border-radius: 0;
+        }
+    p{
+        font-size: 600;
+    }
+                
+/* Previous and Next   */
+
+/*End of it */
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiseaseHub</title>
+    <link rel="icon" type="image/png" href="logooo.webp">
+
+
+
+  <header>
+  <h1 class="logo">
+    <a href="Home.html" style="margin-left: 15px;">DiseaseHub</a>
+  </h1>
+  <nav>
+    <ul class="main-nav">
+      <li><a href="heart.html">Heart</a></li>
+      <li><a href="zi.html">Parkinson</a></li>
+      <li><a href="habi.html">Diabetes</a></li>
+      <li><a href="fad.html">Obesity</a></li>
+      <li><a href="Cancer.html">Cancer</a></li>
+      <li><a href="Glaucoma.html">Glaucoma</a></li>
+      <li><a href="isl.html">Epilepsy&seizures</a></li>
+      <li><a href="Dx.html">Hemophilia</a></li>
+      <li><a class="active" href="nn.html">Hypothyroidism</a></li>
+               <li><a href="ContactUs.html" style="margin-left: 50px; margin-right: 12px;" title="Send an email to us">Contact us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<body background="bkgr.jpg">
+
+       <h1 style="color: #DF8C38;">Hypothyroidism</h1> 
+       <img src="hypo2.png"/>
+       <p>
+        Hypothyroidism happens when the thyroid gland doesn't make enough thyroid hormone,
+         This condition also is called underactive thyroid,
+          Hypothyroidism may not cause noticeable symptoms in its early stages,
+          Over time,
+           hypothyroidism that isn't treated can lead to other health problems,
+           such as high cholesterol and heart problems.
+         </p>
+       <h1 style="color:#DF8C38;">Symptoms</h1>
+       <img src="hypo.png" id="my-imagee"/>
+<style>
+  #my-imagee {
+    border: solid black 1px;
+    position: relative;
+    float: right;
+    margin-right: 0;
+  }
+</style>
+
+    <P>
+         <ul>
+        <li>deprssion </li>
+        <li>brain fog </li>
+        <li>fatigue </li>
+        <li>muscle cramp </li>
+        <li>cold intolerance  </li>
+        <li>weight gain (one of most important symptoms of hypothyroidism)</li>
+        <li>dry skin</li>
+        <li>slow heartbeat</li>
+          </ul>
+    </P>
+      <h1 style="color:#DF8C38 ;">treatment</h1>
+
+Treatment for hypothyroidism usually includes taking the thyroid hormone medicine levothyroxine (Levo-T, Synthroid, others) every day.
+ This medicine is taken by mouth. It returns hormone levels to a healthy range,
+  eliminating symptoms of hypothyroidism.
+
+You'll likely start to feel better one or two weeks after you begin treatment.
+ Treatment with levothyroxine likely will be lifelong. Because the dosage you need may change, your health care provider may check your TSH level every year.
+
+ <h1 style="color: #DF8C38;">advices for hypothyroidism'patients</h1>
+    <ul>- follow a healthy and balanced diet , exercise maintain a healthy weight</ul>
+    <ul>-consult your docotr before taking high-fiber foods , and nutritional supplements 
+        ,such as iron and calcium
+    </ul>
+      
+    </body>
+    
+</html>

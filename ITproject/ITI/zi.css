@@ -1,0 +1,141 @@
+body {
+        font-family: 'Arial', sans-serif;
+        margin: 10;
+        padding: 20;
+        color: #ffffff;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 20px;
+	background-size: cover; 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    }
+
+    header {
+        background: #113d6a;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 1px 4px 9px rgb(223, 140, 56);
+        border-radius: 20px 20px;
+        position: sticky;
+        top: 0;
+        /* Stick to the top of the viewport */
+        z-index: 100;/* Ensure it appears above other elements */
+    }
+
+    .logo a {
+        color: #DF8C38;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    .main-nav li a.active {
+    color: #ff9e00;
+}
+
+    .main-nav {
+        list-style: none;
+        padding: 15;
+        display: flex;
+    }
+
+    /*distance btw each page in the menu*/
+
+    .main-nav li {
+        margin-right: 15px;
+    }
+
+    .main-nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: .9em;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .main-nav a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #DF9408;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    /* line under each page */
+
+    .main-nav a:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    .active:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+
+    /* Responsive Styling */
+
+    @media screen and (max-width: 768px) {
+        header {
+            padding: 10px 20px;
+            border-radius: 0;
+        }
+}
+
+.img-container {
+  position: relative;
+  float: right; /* Option 1: Float right */
+
+}
+
+
+section {
+ 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+        color: #DF8C38;
+    font-size: 35px;
+}
+h1 {
+    color:#DF8C38;
+
+}
+
+
+p {
+    margin-bottom: 20px;
+    font-size:600 ;
+}
+
+img{
+   padding: 20px;
+}
+h3{
+    color:#DF8C38;
+    padding: 20px;
+    font-size: 35px;
+}
+
+.link{
+    padding: 20px;
+   
+    
+}
+

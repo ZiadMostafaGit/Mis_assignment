@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 10;
+        padding: 20;
+        color: #ffffff;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 20px;
+	background-size: cover; 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+    }
+
+    header {
+        background: #113d6a;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 1px 4px 9px rgb(223, 140, 56);
+        border-radius: 20px 20px;
+        position: sticky;
+        top: 0;
+        /* Stick to the top of the viewport */
+        z-index: 100;/* Ensure it appears above other elements */
+    }
+    .main-nav li a.active {
+    color: #ff9e00;
+}
+
+    .logo a {
+        color: #DF8C38;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    .main-nav {
+        list-style: none;
+        padding: 15;
+        display: flex;
+    }
+
+    /*distance btw each page in the menu*/
+
+    .main-nav li {
+        margin-right: 15px;
+    }
+
+    .main-nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: .9em;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .main-nav a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #DF9408;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    /* line under each page */
+
+    .main-nav a:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    .active:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+
+    /* Responsive Styling */
+
+    @media screen and (max-width: 768px) {
+        header {
+            padding: 10px 20px;
+            border-radius: 0;
+        }
+
+     p{
+        font-size: 600;
+     }   
+        
+                
+/* Previous and Next   */
+
+/*End of it */
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiseaseHub</title>
+    <link rel="icon" type="image/png" href="logooo.webp">
+
+
+    <header>
+        <h1 class="logo">
+            <a href="Home.html" style="margin-left: 15px;">DiseaseHub</a>
+
+        </h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="heart.html">Heart</a></li>
+                <li><a href="zi.html">Parkinson</a></li>
+                <li><a href="habi.html">Diabetes</a></li>
+                <li><a href="fad.html">Obesity</a></li>
+                <li><a href="Cancer.html">Cancer</a></li>
+                <li><a class="active" href="Glaucoma.html">Glaucoma</a></li>
+                <li><a href="isl.html">Epilepsy&seizures</a></li>
+                <li><a href="Dx.html">Hemophilia</a></li>
+                <li><a href="nn.html">Hypothyroidism</a></li>
+               <li><a href="ContactUs.html" style="margin-left: 50px; margin-right: 12px;" title="Send an email to us">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<body background="bkgr.jpg">
+
+
+    <h1 style="color: #DF8C38;">Glaucoma</h1>
+    <div class="vid">
+        <video controls>
+            <source src="abdo.mp4" type="video/mp4">
+        </video>
+    </div>
+    <h2 style="color:#DF8C38;">Definition of glaucoma</h2>
+        <div class="p1">
+            <p>Glaucoma is a leading cause of blindness for people over 60 years old
+                But blindness from glaucoma can often be prevented with early treatment
+                In a healthy eye, fluid leaves the eye through the drainage angle, keeping pressure stable.
+            </p>
+        </div>
+      
+    <h2 style="color: #DF8C38;">Symptoms</h2>
+        <div class="p2">
+            <P>
+                <ul>
+                Glaucoma is a progressive eye disease that can lead to vision loss and blindness if left untreated. In its
+                early
+                stages, glaucoma often has no symptoms, which is why regular eye exams are important for early detection.
+                However, as the disease progresses, some common symptoms may
+                <br>
+                <strong> include: </strong>
+                <br>
+                 Peripheral vision loss: Glaucoma typically affects the peripheral or side vision first, making it
+                difficult
+                to see objects in your peripheral field of view.
+                <br>
+                Tunnel vision: As glaucoma progresses, it can cause a narrowing of your visual field until you have
+                tunnel
+                vision, where you can only see objects directly in front of you.
+                <br>
+                Halos around lights: Glaucoma can cause the pupil of your eye to dilate more than usual, which can result
+                in
+                <br>
+                seeing halos or rings around bright lights.
+                <br>
+                 Eye pain: In some cases, glaucoma can cause eye pain or discomfort, particularly in the morning or after
+                waking up from sleep.
+                <br>
+                Nausea and vomiting: In advanced cases of glaucoma, increased pressure within the eye can cause nausea
+                and
+                vomiting.
+                <br>
+                It's important to note that these symptoms may also indicate other eye conditions, so it's essential to have
+                regular eye exams with an ophthalmologist to diagnose and manage any eye health concerns.
+                </ul>
+                </P>
+        </div>
+    <h2 style="color: #DF8C38;">Causes</h2>
+        <div class="p3">
+            <P>
+                <ul>
+                Glaucoma is a complex eye disease that can have multiple causes. Here are some of the most common causes of
+                glaucoma:
+                <br>
+
+                <strong> intraocular pressure (IOP)</strong>:
+                <br> This is the most common cause of glaucoma, where the fluid inside
+                the
+                eye (aqueous humor) builds up, causing an increase in IOP. Over time, this can damage the optic nerve and
+                lead
+                to vision loss.
+                <br>
+
+                Optic nerve damage: Glaucoma can also occur due to damage to the optic nerve, which is responsible for
+                transmitting visual information from the eye to the brain. This can be caused by factors such as genetics,
+                aging, or injury.
+                <br>
+                Low tension glaucoma (LTG): This type of glaucoma occurs when there is optic nerve damage and vision
+                loss,
+                despite normal IOP levels. The exact cause of LTG is not fully understood.
+                <br>
+                Secondary glaucoma: This type of glaucoma occurs as a result of another eye condition or injury, such as
+                cataract surgery, trauma, or inflammation.
+                <br>
+                Congenital glaucoma: This is a rare form of glaucoma that is present at birth or develops during
+                childhood
+                due to abnormalities in the eye's drainage system.
+                <br>
+                It's important to note that some people may be at higher risk for developing glaucoma due to factors such as
+                age, family history, ethnicity, and certain medical conditions. Regular eye exams with an ophthalmologist
+                can
+                help identify any signs of glaucoma and manage the condition before it causes significant vision loss.
+                </ul>
+            </P>
+        </div>    
+    <h2 style="color: #DF8C38;">Treatment</h2>
+        <div class="p4">
+            <P>
+                <ul>
+                The treatment for glaucoma depends on the type and severity of the disease.
+                <br>
+                <strong> Here are some common treatments
+                for glaucoma</strong>:
+                <br>
+                Medications: Eye drops, pills, or ointments are commonly prescribed to lower IOP levels. These
+                medications
+                work by either reducing the production of aqueous humor or increasing its drainage from the eye.
+                <br>
+                Laser therapy: Laser treatment, such as selective laser trabeculoplasty (SLT) or laser iridotomy, can
+                help
+                improve drainage of aqueous humor and lower IOP levels.
+                <br>
+                Surgery: In some cases, surgery may be necessary to manage glaucoma. Common surgical procedures include
+                trabeculectomy, which involves creating a new drainage pathway for aqueous humor, and implantation of a
+                drainage
+                device, such as a shunt or tube, to help drain excess fluid from the eye.
+                <br>
+                Lifestyle changes: Certain lifestyle changes, such as maintaining a healthy weight, exercising regularly,
+                and
+                protecting your eyes from injury, can help manage glaucoma and prevent further damage to the optic nerve.
+                <br>
+                It's important to note that regular follow-up appointments with an ophthalmologist are essential to monitor
+                the
+                progression of glaucoma and adjust treatment plans as needed. Additionally, it's crucial to adhere to any
+                prescribed medications or follow-up appointments to prevent further vision loss.
+                </ul>
+            </P>
+        </div>
+
+    <h2 style="color:#DF8C38;">Table for glaucoma</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>The face of comparison</td>
+                <td>Eye healthy</td>
+                <td>Eye glaucoma</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Optic nerve:</td>
+                <td>the optic nerve appears normal and has a round shape.</td>
+                <td>the optic nerve can become damaged, causing it to appear thinner or more cupped in shape.</td>
+            </tr>
+            <tr>
+                <td> Intraocular pressure (IOP):</td>
+                <td>IOP levels are within a normal range.</td>
+                <td>IOP levels can be too high, leading to damage to the optic nerve and vision loss.</td>
+            </tr>
+            <tr>
+                <td>Visual field:</td>
+                <td>the visual field is complete and unobstructed.</td>
+                <td>the visual field can become restricted due to damage to the optic nerve, resulting in blind
+                    spots or
+                    peripheral vision loss.</td>
+            </tr>
+            <tr>
+                <td>Nerve fiber layer:</td>
+                <td>this layer appears normal and uniform.</td>
+                <td>this layer can become thin or irregular due to damage to the optic nerve, which can be seen on
+                    an
+                    optical coherence tomography (OCT) scan.</td>
+            </tr>
+            <tr>
+                <td>Cornea:</td>
+                <td>the cornea appears clear and smooth.</td>
+                <td>the cornea can become thinner or more curved due to changes in IOP levels or other factors,
+                    which
+                    can affect vision and make it more difficult to manage glaucoma with medications or surgery.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

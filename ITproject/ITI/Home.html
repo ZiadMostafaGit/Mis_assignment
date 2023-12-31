@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 10;
+        padding: 20;
+        color: #ffffff;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 20px;
+	background-size: cover; 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+    }
+
+    header {
+        background: #113d6a;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 1px 4px 9px rgb(223, 140, 56);
+        border-radius: 20px 20px;
+        position: sticky;
+        top: 0;
+        /* Stick to the top of the viewport */
+        z-index: 100;/* Ensure it appears above other elements */
+    }
+
+    .logo a {
+        color: #DF8C38;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    .main-nav li a.active {
+    color: #ff9e00;
+}
+
+    .main-nav {
+        list-style: none;
+        padding: 15;
+        display: flex;
+    }
+
+    /*distance btw each page in the menu*/
+
+    .main-nav li {
+        margin-right: 15px;
+    }
+
+    .main-nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: .9em;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+
+/* the line under*/
+    .main-nav a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #DF9408;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    /* line under each page */
+
+    .main-nav a:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    .active:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+
+    /* Responsive Styling */
+
+    @media screen and (max-width: 768px) {
+        header {
+            padding: 10px 20px;
+            border-radius: 0;
+        }
+        
+                
+/* Previous and Next   */
+
+/*End of it */
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiseaseHub</title>
+    <link rel="icon" type="image/png" href="logooo.webp">
+
+
+
+  <header>
+  <h1 class="logo">
+    <a href="Home.html" style="margin-left: 15px;">DiseaseHub</a>
+  </h1>
+  <nav>
+    <ul class="main-nav">
+      <li><a href="heart.html">Heart</a></li>
+      <li><a href="zi.html">Parkinson</a></li>
+      <li><a href="habi.html">Diabetes</a></li>
+      <li><a href="fad.html">Obesity</a></li>
+      <li><a href="Cancer.html">Cancer</a></li>
+      <li><a href="Glaucoma.html">Glaucoma</a></li>
+      <li><a href="isl.html">Epilepsy&seizures</a></li>
+      <li><a href="Dx.html">Hemophilia</a></li>
+      <li><a href="nn.html">Hypothyroidism</a></li>
+               <li><a href="ContactUs.html" style="margin-left: 50px; margin-right: 12px;" title="Send an email to us">Contact us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<body background="bkgr.jpg">
+
+    <p>
+        <strong> Welcome </strong>to our website, where we aim to enhance awareness and provide knowledge about diseases.
+        <br><strong><a style="color:#DF8C38;">Our mission is</a></strong> to educate and empower individuals to understand different health conditions, their symptoms, causes, and available treatment options.
+        <br>With <strong>comprehensive</strong> and <strong>reliable</strong> information, we strive to help you make informed decisions about your health and well-being.
+        <br>Explore our resources, articles, and guides to stay <strong><span style="text-decoration: underline; color:#DF8C38;"> up-to-date</span> </strong> with the latest advancements in medical research, preventive measures, and support networks.
+        <br>Together, let's navigate the world of diseases and work towards a healthier future.
+        </br>Our website also offers many interactive features that make the user experience more fun and interesting. <b><span style="text-decoration: underline; color:#DF8C38;"> For example</span></b> , you can watch educational videos to explain medical information in a fun and interesting way.
+
+    </p>
+
+<br>
+<img src="R.jpeg" alt="An illustration of various common illnesses" id="my-image" style="width: 660px; height: 350px;" />
+
+<style>
+  #my-image {
+    border: solid black 1px;
+    position: relative;
+    float: right;
+    margin-right: 0;
+  }
+</style>
+
+
+
+    <br><span style="text-decoration: underline; color:#DF8C38;"> The purpose of the page is providing :</span><br>
+    <ul>
+        <li>General information about diseases, such as the definition of the disease, its causes, symptoms, and treatment methods</li>
+        <li>Information about common diseases</li>
+        <li>Information on disease prevention</li>
+        <li>Information on how to deal with diseases</li>
+    </ul>
+    
+    
+
+
+
+<p><br><span style="text-decoration: underline; color:#DF8C38;"> Exampels of Diseases :</span><br>
+
+<div class="navbar horizontal">
+<ul>
+ <li>Acne</li> 
+ <li>Alopecia Areata</li> 
+ <li>Autoimmune Diseases</li>
+ <li>Back Pain</li>
+ <li>Spinal Stenosis</li>
+ <li>Rosacea</li>
+</ul>
+</div>
+
+
+<video width="600" height="350" controls poster="1.jpg">>
+    <source src="What Are Diseases_.mp4" type="video/mp4" alt="امراض" style="width:600px;height:350px;" poster="1.jpg" />
+
+Your browser does not support the video tag.
+</video>
+
+    <style>
+        video {
+            height: auto;
+            border: solid black 1px;
+            position: relative;
+            float: right;
+            margin: 0 0 0 15px;
+            title: "Diseases";
+        }
+    </style>
+
+
+
+    <p><strong><span style="text-decoration: underline; color:#DF8C38"> Disease :</span></strong>
+        <br> any harmful deviation from the normal structural or functional state of an organism, generally associated with certain signs and symptoms and differing in nature from physical injury.<br>
+        <br> A diseased organism commonly exhibits signs or symptoms indicative of its abnormal state.<br> <br> Thus, the normal condition of an organism must be understood in order to recognize the hallmarks of disease. <br> Nevertheless, a sharp demarcation between disease and health is not always apparent.<br> <br>The study of disease is called pathology.<br> <br> It involves the determination of the cause (etiology) of the disease, the understanding of the mechanisms of its development (pathogenesis), the structural changes associated with the disease process (morphological changes), and the functional consequences of those changes. <br>
+        <br>Correctly identifying the cause of a disease is necessary to identifying the proper course of treatment. Humans, other animals, and plants are all susceptible to diseases of some sort. However, that which disrupts the normal functioning of one type of organism may have no effect on the other types. according to
+        <a href="https://www.britannica.com/science/disease" target="_blank" style="color:#DF8C38;" font-family:Cursive;">Britannica</a>
+
+<br>
+
+
+</p>
+
+</body>
+
+
+</html>
