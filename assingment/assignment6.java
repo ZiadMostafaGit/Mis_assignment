@@ -25,7 +25,7 @@ public class assignment6 {
                 "\nNum1/Num2 = "+(num1/num2));
         
 
-           
+           input.close();
         
         
         
