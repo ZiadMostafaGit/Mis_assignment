@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>purchases</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/purchases.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1> My Pharma</h1>
+        </nav>
+    </header>
+    <main>
+        <nav>
+            <input id="button" type="checkbox">
+            <label for="button"></label>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('sales') }}">Sales</a></li>
+                <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
+                <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
+                <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
+                
+            </ul>
+        </nav>
+        <br><br>
+        <h1>purchases</h1>
+        <h3>Search for Medication that 'll be ordered</h3>
+        <div class="search-container">
+            <form action="#">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="Table">
+            <h1>Search Results</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medication Name</th>
+                        <th>Active ingredient</th>
+                        <th>Company name </th>
+                        <th>price ($)</th>
+                        <th>Quantity</th>
+                        <th>Quantity 'll be ordered</th>
+                        <th> Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Medication</td>
+                        <td>Active</td>
+                        <td>Company name </td>
+                        <td>$$$$</td>
+                        <td>00</td>
+                        <td>0</td>
+                        <td><button type="submit">+</button> <button type="submit">-</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <button type="submit">Send order</button> <button type="submit">Cancel</button>
+            </p>
+        </div>
+        <br><br>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Pharma</p>
+    </footer>
+</body>
+
+</html>

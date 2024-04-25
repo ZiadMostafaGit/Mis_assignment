@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales</title>
+    <header>
+        <h1> My Pharma</h1>
+    </header>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/sales.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <input id="button" type="checkbox">
+            <label for="button"></label>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('sales') }}">Sales</a></li>
+                <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
+                <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
+                <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
+               
+            </ul>
+        </nav>
+        <br><br>
+        <h1>Sales</h1>
+        <div class="search-container">
+            <form action="#">
+                <input type="text" placeholder="Search for Medication" name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="Table">
+            <h3>Search Results :</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Num</th>
+                        <th>Batch Number</th>
+                        <th>Medication Name</th>
+                        <th>Active ingredient</th>
+                        <th>Price ($)</th>
+                        <th>Quantity</th>
+                        <th>Expiration date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>00000</td>
+                        <td>Name</td>
+                        <td>Active</td>
+                        <td>$$$$</td>
+                        <td>0</td>
+                        <td>0-0-0000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Pharma</p>
+    </footer>
+</body>
+
+</html>

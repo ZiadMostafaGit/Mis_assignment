@@ -1,0 +1,236 @@
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #f0f0f0;
+
+}
+
+header {
+  background-color: #0005ff;
+  color: #fff;
+  padding: 0px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  position: fixed;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  min-width: 35vw;
+  overflow: hidden;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 0px;
+  background-color: #ffffff;
+  color: #333;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-bottom-right-radius: 15px;
+  transition: max-height .8s, padding 1.2s;
+}
+
+li {
+  padding: 1px;
+  list-style: none;
+  font-style: oblique;
+}
+
+li:hover {
+  background-color: #7c72ed;
+  border-radius: 10px;
+  padding: 10px;
+  transition: padding 0.60s;
+}
+
+nav ul li a {
+  color: #0005ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/*=============== edit table */
+table {
+  max-width: 80%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+/*=============== edit space btween search & table  */
+.search-container {
+  padding: 8px 12px;
+  text-align: center;
+  margin-top: 8px;
+  margin-left: 0.3%;
+  color: white;
+  border-radius: 6px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+/*Edit search box */
+input[type="text"] {
+  padding: .7%;
+  border: 12% #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 25%;
+}
+
+/*Button==============*/
+button {
+  padding: 10px 20px;
+  background-color: #0005ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/*Button==============*/
+.Table {
+  width: auto;
+  min-width: auto;
+  background-color: #fff;
+  margin: 75px auto;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: contents;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+/*line under nav bar*/
+hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: -0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 6px;
+}
+
+label {
+  margin: 15px;
+  width: 60px;
+  height: 10px;
+  border-top: #0088ff solid 15px;
+  border-right: rgba(0, 0, 0, 0%) solid 30px;
+  border-bottom: rgba(0, 0, 0, 0%) solid 30px;
+  border-left: rgba(0, 0, 0, 0%) solid 30px;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 4;
+  color: white;
+  transition: 1s;
+}
+
+#button {
+  display: none;
+}
+
+#button:checked~ul {
+  max-height: 500px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#button:checked~label {
+  transform: rotate(180deg);
+  margin-top: -20px;
+  border-top: #0005ff solid 15px;
+
+}
+
+.head-quote {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding: 25px;
+  border: solid #00aeff 8px;
+}
+
+.quote-text {
+  color: rgb(228, 229, 235);
+  font-size: 57px;
+  font-weight: 900;
+  text-shadow: 1.5px 1.5px rgb(142, 61, 61);
+}
+
+@media (min-width: 480px) {
+  body {
+    background-position: right;
+  }
+
+  ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #button:checked~ul {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}

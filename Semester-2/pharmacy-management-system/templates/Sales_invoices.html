@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales invoices </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/Sales_invoices.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1> My Pharma</h1>
+        </nav>
+    </header>
+    <nav>
+        <input id="button" type="checkbox">
+        <label for="button"></label>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('sales') }}">Sales</a></li>
+            <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
+            <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
+            <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
+           
+        </ul>
+    </nav>
+    <br><br>
+    <div class="Table">
+        <h1>Sales Invoices</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th> N</th>
+                    <th>Batch N</th>
+                    <th>Medication Name</th>
+                    <th>Quantity</th>
+                    <th>Strip</th>
+                    <th>Price($)</th>
+                    <th>Discount</th>
+                    <th>After discount($)</th>
+                    <th>Sale Date</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>00000</td>
+                    <td>Name</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$$$$</td>
+                    <td>0%</td>
+                    <td>$$$</td>
+                    <td>0-0-0000</td>
+                    <td>$$$$</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <button type="submit">Print</button> <button type="submit">Share</button>
+        </p>
+    </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Pharma</p>
+    </footer>
+</body>
+
+</html>
