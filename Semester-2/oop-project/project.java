@@ -1,4 +1,3 @@
-// Product.java
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -71,7 +70,6 @@ public class project{
         }
     }
 
-    // ClothingProduct.java
     public static class ClothingProduct extends Product {
         private String size;
         private String fabric;
@@ -127,7 +125,6 @@ public class project{
         }
     }
 
-    // Customer.java
     public static class Customer {
         private int customerId;
         private String name;
@@ -240,25 +237,24 @@ public class project{
             Scanner scanner = new Scanner(System.in);
             System.out.print("Enter the number of products you want to add: ");
             int numProducts = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine();
 
             for (int i = 0; i < numProducts; i++) {
                 System.out.println("\nEnter details for product " + (i + 1) + ":");
                 System.out.print("Product type (1: Electronic, 2: Clothing, 3: Book): ");
                 int productType = scanner.nextInt();
-                scanner.nextLine(); // Consume the newline character
+                scanner.nextLine(); 
 
                 System.out.print("Product ID: ");
                 int productId = scanner.nextInt();
-                scanner.nextLine(); // Consume the newline character
+                scanner.nextLine(); 
 
                 System.out.print("Product name: ");
                 String productName = scanner.nextLine();
 
                 System.out.print("Product price: ");
                 double productPrice = scanner.nextDouble();
-                scanner.nextLine(); // Consume the newline character
-
+                scanner.nextLine(); 
                 Product product;
                 switch (productType) {
                     case 1:
@@ -266,7 +262,7 @@ public class project{
                         String brand = scanner.nextLine();
                         System.out.print("Warranty period (months): ");
                         int warrantyPeriod = scanner.nextInt();
-                        scanner.nextLine(); // Consume the newline character
+                        scanner.nextLine(); 
                         product = new ElectronicProduct(productId, productName, productPrice, brand, warrantyPeriod);
                         break;
                     case 2:
@@ -322,21 +318,13 @@ public class project{
 
 
     public static void main(String[] args) {
-        // Test case 1
         ElectronicProduct smartphone = new ElectronicProduct(1, "smartphone", 599.9, "Samsung", 1);
-
-        // Test case 2
         ClothingProduct tshirt = new ClothingProduct(2, "T-shirt", 19.99, "Medium", "Cotton");
-
-        // Test case 3
-        BookProduct book = new BookProduct(3, "OOP", 39.99, "O'Reilly", "X Publications");
-
-        // Test case 4
+        BookProduct book = new BookProduct(3, "Mickey Mouse", 39.99, "Walt Disney", "Disney Compny");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your customer ID: ");
         int customerId = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
-
+        scanner.nextLine();
         System.out.print("Enter your name: ");
         String customerName = scanner.nextLine();
 
@@ -345,12 +333,11 @@ public class project{
 
         Customer customer = new Customer(customerId, customerName, customerAddress);
 
-        // Test case 5
+        
         Cart cart = new Cart(customer.getCustomerId());
         cart.addProductsToCart();
         cart.displayProducts();
 
-        // Test case 6
         System.out.print("\nDo you want to place an order? (Y/N): ");
         String placeOrder = scanner.nextLine();
 
