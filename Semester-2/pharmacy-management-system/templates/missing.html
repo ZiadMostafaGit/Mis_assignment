@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-wi dth, initial-scale=1.0">
+    <title>missing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>missing </title>
+    <header>
+      My Pharma
+    </header>
+  </head>
+
+  <body>
+
+    <nav>
+      <input id="button" type="checkbox">
+      <label for="button"></label>
+      <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('sales') }}">Sales</a></li>
+          <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
+          <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
+          <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
+          <li><a href="{{ url_for('cash') }}">cash</a></li>
+          <li><a href="{{ url_for('expiring') }}">expiring</a></li>
+          <li><a href="{{ url_for('inventory') }}">inventory</a></li>
+          <li><a href="{{ url_for('missing') }}">missing</a></li>
+
+          
+      </ul>
+  </nav>
+    <h1>missing medicines</h1>
+
+    <div class="search-container">
+      <input type="text" placeholder="search for the product ">
+      <button type="submit">Search</button>
+    </div>
+
+    <div class="container">
+
+  
+    <table>
+      <tr class="FirstTr">
+        <th>product name</th>
+        <th>missing Quantities</th>
+        <th>history of shortage</th>
+      </tr>
+      <tr>
+        <td>product1</td>
+        <td>0</td>
+        <td>0/0/0</td>
+      </tr>
+      <tr>
+        <td>product2</td>
+        <td>0</td>
+        <td>0/0/0</td>
+      </tr>
+      <tr>
+        <td>product3</td>
+        <td>0</td>
+        <td>0/0/0</td>
+      </tr>
+      <tr>
+        <td>product4</td>
+        <td>0</td>
+        <td>0/0/0</td>
+      </tr>
+      <tr>
+        <td>product5</td>
+        <td>0</td>
+        <td>0/0/0</td>
+      </tr>
+      <tr>
+        <td>product6</td>
+        <td>0</td>
+        <td>0/0/0</td>
+      </tr>
+    </table>
+  </div>
+
+  <footer>
+    <p>©2024 My Pharma</p>
+  </footer>
+</body>
+</html>

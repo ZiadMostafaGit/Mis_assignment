@@ -27,7 +27,7 @@ header {
 }
 
 footer {
-  background-color: #333;
+  background-color: #ffffff;
   color: white;
   text-align: center;
   position: fixed;
@@ -50,7 +50,7 @@ ul {
   gap: 15px;
   max-height: 0px;
   background-color: #ffffff;
-  color: #333;
+  color: #ffffff;
   padding-left: 40px;
   padding-right: 40px;
   border-bottom-right-radius: 15px;

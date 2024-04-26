@@ -23,6 +23,29 @@ def sales_invoices():
 def sales():
     return render_template("sales.html")
 
+
+
+
+
+@app.route("/cash")
+def cash():
+    return render_template("cash.html")
+
+
+@app.route("/expiring")
+def expiring():
+    return render_template("expiring.html")
+
+@app.route("/inventory")
+def inventory():
+    return render_template("inventory.html")
+
+@app.route("/missing")
+def missing():
+    return render_template("missing.html")
+
+
+
 @app.route("/login", methods=["POST"])
 def login():
     password = request.form.get("password")
