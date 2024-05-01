@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchases invoices </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/purchases_invoices.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1> My Pharma</h1>
+        </nav>
+    </header>
+    <nav>
+        <input id="button" type="checkbox">
+        <label for="button"></label>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('sales') }}">Sales</a></li>
+            <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
+            <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
+            <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
+            <li><a href="Unavailable Medications.html">Unavailable Medications</a></li>
+            <li><a href="Near expiry.html">Near expiry</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="{{ url_for('cash') }}">cash</a></li>
+        </ul>
+    </nav>
+    <br><br>
+    <div>
+        <h1>Purchases invoices</h1>
+        <p>
+            <input type="date" >
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>M-ID</th>
+                    <th>S-ID</th>
+                    <th>Medication Name</th>
+                    <th>Quantity</th>
+                    <th> Supplier Price($)</th>
+                    <th>Validity date</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Name</td>
+                    <td>0</td>
+                    <td>$$$$</td>
+                    <td>0-0-0000</td>
+                    <td>$$$$</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Name</td>
+                    <td>0</td>
+                    <td>$$$$</td>
+                    <td>0-0-0000</td>
+                    <td>$$$$</td>
+                </tr>
+            
+            </tbody>
+        </table>
+        <p>
+            <button type="submit">Print</button>
+        </p>
+    </div>
+    </main>
+    <br><br>
+    <footer>
+        <p>&copy; 2024 My Pharma</p>
+    </footer>
+</body>
+
+</html>
