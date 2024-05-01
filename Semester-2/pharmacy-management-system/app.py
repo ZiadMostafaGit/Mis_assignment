@@ -1,5 +1,5 @@
-from flask import Flask, redirect, url_for, render_template, request
-
+from flask import Flask, redirect, url_for, render_template, request,jsonify
+import search as sh
 app = Flask(__name__)
 
 @app.route("/")
@@ -54,6 +54,13 @@ def login():
     else:
         error_message = "Incorrect password. Please try again."
         return redirect(url_for("home", error_message=error_message))
+    
+
+@app.route('/search', methods=['POST'])
+def perform_search():
+    search_query = request.form.get('search')
+    results = sh.search_in_mid(search_query)
+    return render_template('purchases.html', search_results=results)
 
 if __name__ == "__main__":
     app.run()
