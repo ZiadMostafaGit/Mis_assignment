@@ -9,6 +9,8 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
+  background-color: #f0f0f0;
+  display: grid;
 }
 
 header {
@@ -16,7 +18,7 @@ header {
   color: #fff;
   padding: 0px;
   text-align: center;
-  font-size: 30px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -33,7 +35,7 @@ ul{
 	flex-direction: column;
 	gap: 15px;
 	max-height: 0px;
-	background-color: #333;
+	background-color: #ffffff;
 	color: #333;
 	padding-left: 40px;
 	padding-right: 40px;
@@ -70,7 +72,7 @@ label{
 	position: fixed;
 	z-index: 4;
 	color: white;
-	transition: 1s;
+	transition: .75s;
 }
 
 #button{
@@ -121,7 +123,7 @@ label{
 	
 	#button:checked ~ ul{
 		padding-top: 25px;
-                padding-bottom: 25px;
+    padding-bottom: 25px;
 	}
 }
 
@@ -136,16 +138,20 @@ body {
 }
 /* تنسيق الجدول */
 table {
-  width: 100%;
-  margin: auto;
+  max-width: 100%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  border-collapse: collapse;
 }
 
 th, td {
+  border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-
+  text-align: center;
 }
 
 /* تنسيق حقل البحث */
@@ -192,6 +198,12 @@ footer {
   width: 100%;
 }
 
+.container h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
 .container {
   width: 90%;
   background-color: #fff;
@@ -204,17 +216,11 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container h2 {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 50px;
-}
-
 .FirstTr {
   background-color: #f0f0f0;
 }
 
-.container input[type="number"] {
+.container input[type="text"] {
 width: 80%;
 padding: 10px;
 margin-bottom: 5%;

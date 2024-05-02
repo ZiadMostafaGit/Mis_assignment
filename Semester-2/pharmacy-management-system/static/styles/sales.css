@@ -1,22 +1,21 @@
 h1,
 h2,
-h3 {
+h3,p {
   text-align: center;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 
+}
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
   background-color: #f0f0f0;
-
+  display: grid;
+  
 }
-
 header {
   background-color: #0005ff;
   color: #fff;
@@ -25,9 +24,8 @@ header {
   font-size: 15px;
   font-weight: bold;
 }
-
 footer {
-  background-color: #ffffff;
+  background-color: #333;
   color: white;
   text-align: center;
   position: fixed;
@@ -35,7 +33,6 @@ footer {
   bottom: 0;
   width: 100%;
 }
-
 nav {
   position: fixed;
   top: 0;
@@ -50,7 +47,7 @@ ul {
   gap: 15px;
   max-height: 0px;
   background-color: #ffffff;
-  color: #ffffff;
+  color: #333;
   padding-left: 40px;
   padding-right: 40px;
   border-bottom-right-radius: 15px;
@@ -75,18 +72,26 @@ nav ul li a {
   text-decoration: none;
   font-weight: bold;
 }
-
 /*=============== edit table */
 table {
-  max-width: 80%;
+  max-width: auto;
   margin: 20px auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
+  border-collapse: collapse;
 }
-
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+table th {
+  background-color: #f2f2f2;
+}
 /*=============== edit space btween search & table  */
 .search-container {
   padding: 8px 12px;
@@ -99,16 +104,27 @@ table {
   border: none;
   cursor: pointer;
 }
-
 /*Edit search box */
-input[type="text"] {
+input[type="search"] {
   padding: .7%;
   border: 12% #ccc;
   border-radius: 5px;
   font-size: 16px;
-  width: 25%;
+  width: 40%;
 }
-
+input[type="text"]{
+  padding: .7%;
+  border: 12% #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 10%;
+}
+#positioned-element {
+  position: absolute;
+    top: 120px;
+    right: 40%;
+    width: 100%;
+}
 /*Button==============*/
 button {
   padding: 10px 20px;
@@ -119,56 +135,12 @@ button {
   cursor: pointer;
   font-size: 16px;
 }
-
 button:hover {
   background-color: #45a049;
 }
-
 /*Button==============*/
-.Table {
-  width: auto;
-  min-width: auto;
-  background-color: #fff;
-  margin: 75px auto;
-  margin-bottom: 20px;
-  margin-top: 30px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: contents;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-table th,
-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-}
-
-table th {
-  background-color: #f2f2f2;
-}
 
 /*line under nav bar*/
-hr {
-  display: block;
-  unicode-bidi: isolate;
-  margin-block-start: 0.5em;
-  margin-block-end: -0.5em;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-  overflow: hidden;
-  border-style: inset;
-  border-width: 6px;
-}
-
 label {
   margin: 15px;
   width: 60px;
@@ -183,7 +155,6 @@ label {
   color: white;
   transition: 1s;
 }
-
 #button {
   display: none;
 }
@@ -200,35 +171,14 @@ label {
   border-top: #0005ff solid 15px;
 
 }
-
-.head-quote {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 20px;
-  padding: 25px;
-  border: solid #00aeff 8px;
-}
-
-.quote-text {
-  color: rgb(228, 229, 235);
-  font-size: 57px;
-  font-weight: 900;
-  text-shadow: 1.5px 1.5px rgb(142, 61, 61);
-}
-
 @media (min-width: 480px) {
   body {
     background-position: right;
   }
-
   ul {
     flex-direction: row;
     justify-content: space-around;
   }
-
   #button:checked~ul {
     padding-top: 25px;
     padding-bottom: 25px;

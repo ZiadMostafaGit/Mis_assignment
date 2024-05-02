@@ -1,19 +1,18 @@
 h1,
 h2,
-p {
+p,h3 {
   text-align: center;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
   background-color: #f0f0f0;
+  display: grid;
 }
 
 header {
@@ -77,14 +76,28 @@ nav ul li a {
 
 /*=============== edit table */
 table {
-  max-width: 80%;
+  max-width: 100%;
   margin: 20px auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
+  border-collapse: collapse;
+  margin-top: 20px;
+
 }
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
 
 /*=============== edit space btween search & table  */
 .search-container {
@@ -124,36 +137,6 @@ button:hover {
 }
 
 /*Button==============*/
-.Table {
-  width: auto;
-  min-width: auto;
-  background-color: #fff;
-  margin: 75px auto;
-  margin-bottom: 20px;
-  margin-top: 30px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: contents;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-table th,
-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-}
-
-table th {
-  background-color: #f2f2f2;
-}
 
 /*line under nav bar*/
 hr {
@@ -167,7 +150,6 @@ hr {
   border-style: inset;
   border-width: 6px;
 }
-
 label {
   margin: 15px;
   width: 60px;
@@ -199,25 +181,6 @@ label {
   border-top: #0005ff solid 15px;
 
 }
-
-.head-quote {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 20px;
-  padding: 25px;
-  border: solid #00aeff 8px;
-}
-
-.quote-text {
-  color: rgb(228, 229, 235);
-  font-size: 57px;
-  font-weight: 900;
-  text-shadow: 1.5px 1.5px rgb(142, 61, 61);
-}
-
 @media (min-width: 480px) {
   body {
     background-position: right;

@@ -22,56 +22,67 @@
                 <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
                 <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
                 <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
-                <li><a href="{{ url_for('cash') }}">cash</a></li>
-                <li><a href="{{ url_for('expiring') }}">expiring</a></li>
-                <li><a href="{{ url_for('inventory') }}">inventory</a></li>
+                <li><a href="{{ url_for('Unavailable_Medications') }}">Unavailable_Medications</a></li>
                 <li><a href="{{ url_for('missing') }}">missing</a></li>
-      
-                
+                <li><a href="{{ url_for('inventory') }}">inventory</a></li>
+                <li><a href="{{ url_for('cash') }}">cash</a></li>
             </ul>
         </nav>
         <br><br>
         <h1>Sales</h1>
         <div class="search-container">
             <form action="#">
-                <input type="text" placeholder="Search for Medication" name="search">
+                <input type="search" placeholder="Search for Medication" name="search">
                 <button type="submit">Search</button>
             </form>
         </div>
-        <div class="Table">
+    <br><br><br>
+        <div>
             <h3>Search Results :</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>Num</th>
-                        <th>Batch Number</th>
+                        <th>M-ID</th>
                         <th>Medication Name</th>
-                        <th>Active ingredient</th>
-                        <th>Price ($)</th>
                         <th>Quantity</th>
+                        <th>Quantity sold</th>
+                        <th>Unit</th>
+                        <th>Price</th>
                         <th>Expiration date</th>
+                        <th>Amount</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>00000</td>
                         <td>Name</td>
-                        <td>Active</td>
-                        <td>$$$$</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                         <td>0</td>
                         <td>0-0-0000</td>
+                        <td> <button type="submit">+</button> <button type="submit">-</button> <button type="submit">Reset</button></td>
                     </tr>
+             
+                
                 </tbody>
             </table>
-        </div>
+            <p id="positioned-element">
+                <input type="text" placeholder="Pharmacist id"><br><br>
+                <input type="text" placeholder="Customer phone">
+            </p>
+            <br>
+            <u><h3>Total Price : </h3></u>
+            <br>
+            <p>
+     <button type="submit">Save & Sell</button> <button type="submit">Cancel</button>
+            </p>       
         </nav>
         </main>
     </div>
-
+    <br><br>
     <footer>
         <p>&copy; 2024 My Pharma</p>
     </footer>
 </body>
-
 </html>

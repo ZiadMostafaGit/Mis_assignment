@@ -32,9 +32,9 @@ def cash():
     return render_template("cash.html")
 
 
-@app.route("/expiring")
-def expiring():
-    return render_template("expiring.html")
+@app.route("/Unavailable_Medications")
+def Unavailable_Medications():
+    return render_template("Unavailable_Medications.html")
 
 @app.route("/inventory")
 def inventory():

@@ -10,6 +10,8 @@ body {
 	background-size: 100%;
 	background-image: url("p.jpeg");
 	background-size: cover;
+	display: grid;
+	background-color: #f0f0f0;
 }
 
 header {
@@ -70,7 +72,7 @@ nav ul li a {
 	font-weight: bold;
 }
 
-/*تنسيق الزرار*/
+/*button===========*/
 label {
 	margin: 15px;
 	width: 60px;
@@ -102,24 +104,6 @@ label {
 	border-top: #0005ff solid 15px;
 }
 
-.head-quote {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	align-items: flex-start;
-	justify-content: center;
-	gap: 20px;
-	padding: 25px;
-	border: solid #00aeff 8px;
-}
-
-.quote-text {
-	color: rgb(228, 229, 235);
-	font-size: 57px;
-	font-weight: 900;
-	text-shadow: 1.5px 1.5px rgb(142, 61, 61);
-}
-
 @media (min-width: 480px) {
 	body {
 		background-position: right;
@@ -140,11 +124,6 @@ label {
 h1 {
 	text-align: center;
 }
-
-body {
-	background-color: #f0f0f0;
-}
-
 #form-section {
 	text-align: center;
 	background-size: cover;

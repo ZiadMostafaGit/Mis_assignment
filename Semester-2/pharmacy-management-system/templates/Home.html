@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +9,9 @@
   </header>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/Home.css') }}">
 </head>
-<body>
-  <nav>
-    <!-- Navigation menu -->
-  </nav>
 
+<body>
+  
   <section id="form-section">
     <form id="employee-form" method="POST" action="{{ url_for('login') }}">
       <h1>Sign In</h1>
@@ -26,7 +23,6 @@
       {% endif %}
     </form>
   </section>
-
   <footer>
     <p>&copy; 2024 My Pharma</p>
   </footer>

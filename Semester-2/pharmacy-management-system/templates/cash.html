@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <title>Cash </title>
     <header>
-      My Pharma
+      <h1>My Pharma</h1> 
     </header>
   </head>
 
@@ -21,12 +21,10 @@
           <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
           <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
           <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
-          <li><a href="{{ url_for('cash') }}">cash</a></li>
-          <li><a href="{{ url_for('expiring') }}">expiring</a></li>
-          <li><a href="{{ url_for('inventory') }}">inventory</a></li>
+          <li><a href="{{ url_for('Unavailable_Medications') }}">Unavailable_Medications</a></li>
           <li><a href="{{ url_for('missing') }}">missing</a></li>
-
-          
+          <li><a href="{{ url_for('inventory') }}">inventory</a></li>
+          <li><a href="{{ url_for('cash') }}">cash</a></li>
       </ul>
   </nav>
     
@@ -34,7 +32,7 @@
 
     <div class="container">
       <h2>Enter the amount of money</h2>
-      <input type="number" id="numberInput" placeholder="Enter here ... " min="1">
+      <input type="text" id="numberInput" placeholder="Enter here ... " min="1">
       <input type="button" value="Check" id="checkButton">
       <div class="result"></div>
     </div>
@@ -51,7 +49,7 @@
   const resultDiv = document.querySelector('.result');
 
   checkButton.addEventListener('click', () => {
-      const inputNumber = parseInt(numberInput.value);
+      const inputNumber = parseFloat(numberInput.value);
       const difference = Math.abs(1000 - inputNumber);
 
       if (inputNumber === 1000) {

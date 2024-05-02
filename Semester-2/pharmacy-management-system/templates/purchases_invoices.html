@@ -22,28 +22,27 @@
             <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
             <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
             <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
-            <li><a href="{{ url_for('cash') }}">cash</a></li>
-            <li><a href="{{ url_for('expiring') }}">expiring</a></li>
+            <li><a href="{{ url_for('Unavailable_Medications') }}">Unavailable_Medications</a></li>
+            <li><a href="{{ url_for('missing') }}">missing</a></li>
             <li><a href="{{ url_for('inventory') }}">inventory</a></li>
-            <li><a href="{{ url_for('missing') }}"></a>Unavailable Medications</li>
-  
-            
+            <li><a href="{{ url_for('cash') }}">cash</a></li>
         </ul>
     </nav>
     <br><br>
-    <div class="Table">
+    <div>
         <h1>Purchases invoices</h1>
+        <p>
+            <input type="date" >
+        </p>
         <table>
             <thead>
                 <tr>
-                    <th> N</th>
-                    <th>Batch N</th>
+                    <th>ID</th>
+                    <th>M-ID</th>
+                    <th>S-ID</th>
                     <th>Medication Name</th>
-                    <th>Company name</th>
                     <th>Quantity</th>
-                    <th>Price($)</th>
-                    <th>Discount</th>
-                    <th>After discount($)</th>
+                    <th> Supplier Price($)</th>
                     <th>Validity date</th>
                     <th>Total</th>
                 </tr>
@@ -51,23 +50,33 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>00000</td>
+                    <td>1</td>
+                    <td>1</td>
                     <td>Name</td>
                     <td>0</td>
-                    <td>0</td>
                     <td>$$$$</td>
-                    <td>0%</td>
-                    <td>$$$</td>
                     <td>0-0-0000</td>
                     <td>$$$$</td>
                 </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Name</td>
+                    <td>0</td>
+                    <td>$$$$</td>
+                    <td>0-0-0000</td>
+                    <td>$$$$</td>
+                </tr>
+            
             </tbody>
         </table>
         <p>
-            <button type="submit">Print</button> <button type="submit">Share</button>
+            <button type="submit">Print</button>
         </p>
     </div>
     </main>
+    <br><br>
     <footer>
         <p>&copy; 2024 My Pharma</p>
     </footer>

@@ -1,12 +1,12 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 
 public class project{
 
 
-    abstract public static class Product {
+    public  abstract class Product {
         protected int productId;
         protected String name;
         protected double price;
@@ -21,29 +21,16 @@ public class project{
             return productId;
         }
 
-        public void setProductId(int productId) {
-            this.productId = Math.abs(productId);
-        }
-
         public String getName() {
             return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
         }
 
         public double getPrice() {
             return price;
         }
-
-        public void setPrice(double price) {
-            this.price = Math.abs(price);
-        }
     }
 
-    // ElectronicProduct.java
-    public static class ElectronicProduct extends Product {
+    public  class ElectronicProduct extends Product {
         private String brand;
         private int warrantyPeriod;
 
@@ -57,20 +44,12 @@ public class project{
             return brand;
         }
 
-        public void setBrand(String brand) {
-            this.brand = brand;
-        }
-
         public int getWarrantyPeriod() {
             return warrantyPeriod;
         }
-
-        public void setWarrantyPeriod(int warrantyPeriod) {
-            this.warrantyPeriod = Math.abs(warrantyPeriod);
-        }
     }
 
-    public static class ClothingProduct extends Product {
+    public  class ClothingProduct extends Product {
         private String size;
         private String fabric;
 
@@ -84,21 +63,12 @@ public class project{
             return size;
         }
 
-        public void setSize(String size) {
-            this.size = size;
-        }
-
         public String getFabric() {
             return fabric;
         }
-
-        public void setFabric(String fabric) {
-            this.fabric = fabric;
-        }
     }
 
-    // BookProduct.java
-    public static class BookProduct extends Product {
+    public  class BookProduct extends Product {
         private String author;
         private String publisher;
 
@@ -112,20 +82,12 @@ public class project{
             return author;
         }
 
-        public void setAuthor(String author) {
-            this.author = author;
-        }
-
         public String getPublisher() {
             return publisher;
         }
-
-        public void setPublisher(String publisher) {
-            this.publisher = publisher;
-        }
     }
 
-    public static class Customer {
+    public  class Customer {
         private int customerId;
         private String name;
         private String address;
@@ -140,29 +102,16 @@ public class project{
             return customerId;
         }
 
-        public void setCustomerId(int customerId) {
-            this.customerId = Math.abs(customerId);
-        }
-
         public String getName() {
             return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
         }
 
         public String getAddress() {
             return address;
         }
-
-        public void setAddress(String address) {
-            this.address = address;
-        }
     }
 
-
-    public static class Cart {
+    public  class Cart {
         private int customerId;
         private int nProducts;
         private ArrayList<Product> products;
@@ -173,185 +122,119 @@ public class project{
             this.products = new ArrayList<>();
         }
 
-        public int getCustomerId() {
-            return customerId;
-        }
-
-        public void setCustomerId(int customerId) {
-            this.customerId = Math.abs(customerId);
-        }
-
-        public int getnProducts() {
-            return nProducts;
-        }
-
-        public ArrayList<Product> getProducts() {
-            return products;
-        }
-
         public void addProduct(Product product) {
             products.add(product);
             nProducts++;
         }
 
-        public void removeProduct(int productId) {
-            for (int i = 0; i < products.size(); i++) {
-                if (products.get(i).getProductId() == productId) {
-                    products.remove(i);
-                    nProducts--;
-                    break;
-                }
+        public void removeProduct(int index) {
+            if (index >= 0 && index < nProducts) {
+                products.remove(index);
+                nProducts--;
             }
         }
 
         public double calculatePrice() {
-            double totalPrice = 0.0;
+            double totalPrice = 0;
             for (Product product : products) {
                 totalPrice += product.getPrice();
             }
             return totalPrice;
         }
 
-        public Order placeOrder() {
-            Order order = new Order(customerId, products, calculatePrice());
-            products.clear();
-            nProducts = 0;
-            return order;
-        }
-
-        public void displayProducts() {
-            System.out.println("Current products in the cart:");
-            for (Product product : products) {
-                System.out.println("- " + product.getName() + " (ID: " + product.getProductId() + ", Price: $" + product.getPrice() + ")");
-            }
-        }
-
-
-
-
-
-
-
-
-        public void addProductsToCart() {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Enter the number of products you want to add: ");
-            int numProducts = scanner.nextInt();
-            scanner.nextLine();
-
-            for (int i = 0; i < numProducts; i++) {
-                System.out.println("\nEnter details for product " + (i + 1) + ":");
-                System.out.print("Product type (1: Electronic, 2: Clothing, 3: Book): ");
-                int productType = scanner.nextInt();
-                scanner.nextLine(); 
-
-                System.out.print("Product ID: ");
-                int productId = scanner.nextInt();
-                scanner.nextLine(); 
-
-                System.out.print("Product name: ");
-                String productName = scanner.nextLine();
-
-                System.out.print("Product price: ");
-                double productPrice = scanner.nextDouble();
-                scanner.nextLine(); 
-                Product product;
-                switch (productType) {
-                    case 1:
-                        System.out.print("Brand: ");
-                        String brand = scanner.nextLine();
-                        System.out.print("Warranty period (months): ");
-                        int warrantyPeriod = scanner.nextInt();
-                        scanner.nextLine(); 
-                        product = new ElectronicProduct(productId, productName, productPrice, brand, warrantyPeriod);
-                        break;
-                    case 2:
-                        System.out.print("Size: ");
-                        String size = scanner.nextLine();
-                        System.out.print("Fabric: ");
-                        String fabric = scanner.nextLine();
-                        product = new ClothingProduct(productId, productName, productPrice, size, fabric);
-                        break;
-                    case 3:
-                        System.out.print("Author: ");
-                        String author = scanner.nextLine();
-                        System.out.print("Publisher: ");
-                        String publisher = scanner.nextLine();
-                        product = new BookProduct(productId, productName, productPrice, author, publisher);
-                        break;
-                    default:
-                        System.out.println("Invalid product type. Skipping this product.");
-                        continue;
-                }
-
-                addProduct(product);
-            }
+        public void placeOrder() {
+            double totalPrice = calculatePrice();
+            int orderId = 1; 
+            Order order = new Order(customerId, orderId, products, totalPrice);
+            order.printOrderInfo();
         }
     }
 
-    public static class Order {
+    public  class Order {
         private int customerId;
-        private static int orderIdCounter = 1;
         private int orderId;
         private ArrayList<Product> products;
         private double totalPrice;
 
-        public Order(int customerId, ArrayList<Product> products, double totalPrice) {
+        public Order(int customerId, int orderId, ArrayList<Product> products, double totalPrice) {
             this.customerId = Math.abs(customerId);
-            this.orderId = orderIdCounter++;
+            this.orderId = Math.abs(orderId);
             this.products = new ArrayList<>(products);
             this.totalPrice = Math.abs(totalPrice);
         }
 
         public void printOrderInfo() {
-            System.out.println("\nOrder Information:");
-            System.out.println("Customer ID: " + customerId);
+            System.out.println("Here's your order's summary:");
             System.out.println("Order ID: " + orderId);
+            System.out.println("Customer ID: " + customerId);
             System.out.println("Products:");
             for (Product product : products) {
-                System.out.println("- " + product.getName() + " (ID: " + product.getProductId() + ", Price: $" + product.getPrice() + ")");
+                System.out.println(product.getName() + " - $" + product.getPrice());
             }
             System.out.println("Total Price: $" + totalPrice);
         }
     }
 
 
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    project ecommerceSystem = new project(); // Create an instance of the outer class
 
-    public static void main(String[] args) {
-        ElectronicProduct smartphone = new ElectronicProduct(1, "smartphone", 599.9, "Samsung", 1);
-        ClothingProduct tshirt = new ClothingProduct(2, "T-shirt", 19.99, "Medium", "Cotton");
-        BookProduct book = new BookProduct(3, "Mickey Mouse", 39.99, "Walt Disney", "Disney Compny");
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your customer ID: ");
-        int customerId = scanner.nextInt();
-        scanner.nextLine();
-        System.out.print("Enter your name: ");
-        String customerName = scanner.nextLine();
+    System.out.println("Welcome to the E-Commerce System!");
 
-        System.out.print("Enter your address: ");
-        String customerAddress = scanner.nextLine();
+    System.out.print("Please enter your id: ");
+    int customerId = scanner.nextInt();
+    scanner.nextLine(); // Consume newline character
 
-        Customer customer = new Customer(customerId, customerName, customerAddress);
+    System.out.print("Please enter your name: ");
+    String customerName = scanner.nextLine();
 
-        
-        Cart cart = new Cart(customer.getCustomerId());
-        cart.addProductsToCart();
-        cart.displayProducts();
+    System.out.print("Please enter your address: ");
+    String customerAddress = scanner.nextLine();
 
-        System.out.print("\nDo you want to place an order? (Y/N): ");
-        String placeOrder = scanner.nextLine();
+    Customer customer = ecommerceSystem.new Customer(customerId, customerName, customerAddress); // Use the instance to create nested class instances
+    Cart cart = ecommerceSystem.new Cart(customer.getCustomerId());
 
-        if (placeOrder.equalsIgnoreCase("Y")) {
-            Order order = cart.placeOrder();
-            order.printOrderInfo();
-        } else {
-            System.out.println("Order not placed.");
+    // Create products
+    ElectronicProduct smartphone = ecommerceSystem.new ElectronicProduct(1, "Smartphone", 599.99, "Samsung", 1);
+    ClothingProduct tShirt = ecommerceSystem.new ClothingProduct(2, "T-Shirt", 19.99, "Medium", "Cotton");
+    BookProduct oopBook = ecommerceSystem.new BookProduct(3, "OOP", 39.99, "O'Reilly", "X Publications");
+
+
+            System.out.print("How many products you want to add to your cart? ");
+            int numProducts = scanner.nextInt();
+
+            for (int i = 0; i < numProducts; i++) {
+                System.out.println("Which product would you like to add? 1- Smartphone 2- T-Shirt 3- OOP");
+                int choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        cart.addProduct(smartphone);
+                        break;
+                    case 2:
+                        cart.addProduct(tShirt);
+                        break;
+                    case 3:
+                        cart.addProduct(oopBook);
+                        break;
+                    default:
+                        System.out.println("Invalid choice!");
+                        i--;
+                        break;
+                }
+            }
+
+            double totalPrice = cart.calculatePrice();
+            System.out.println("Your total is $" + totalPrice + ". Would you like to place the order? 1- Yes 2- No");
+            int placeOrder = scanner.nextInt();
+            if (placeOrder == 1) {
+                cart.placeOrder();
+            } else {
+                System.out.println("Order cancelled.");
+            }
+
+            scanner.close();
         }
-    }
-
-
-
-
 
 
 
