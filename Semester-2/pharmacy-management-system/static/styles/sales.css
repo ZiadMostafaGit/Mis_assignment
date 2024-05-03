@@ -1,7 +1,6 @@
-h1,
-h2,
-h3,p {
+h1,h2,h3,p {
   text-align: center;
+  
 }
 * {
   margin: 0;
@@ -14,8 +13,14 @@ body {
   line-height: 1.5;
   background-color: #f0f0f0;
   display: grid;
-  
+
 }
+@media screen and (max-width: 895px) {
+    .container {
+        width: 100%; 
+    }
+}
+
 header {
   background-color: #0005ff;
   color: #fff;
@@ -74,7 +79,7 @@ nav ul li a {
 }
 /*=============== edit table */
 table {
-  max-width: auto;
+  max-width: 100%;
   margin: 20px auto;
   background-color: #fff;
   padding: 20px;
@@ -82,6 +87,8 @@ table {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
   border-collapse: collapse;
+  margin-top: 20px;
+
 }
 table th,
 table td {
@@ -89,9 +96,11 @@ table td {
   padding: 8px;
   text-align: center;
 }
+
 table th {
   background-color: #f2f2f2;
 }
+
 /*=============== edit space btween search & table  */
 .search-container {
   padding: 8px 12px;
@@ -110,7 +119,7 @@ input[type="search"] {
   border: 12% #ccc;
   border-radius: 5px;
   font-size: 16px;
-  width: 40%;
+  width: 30%;
 }
 input[type="text"]{
   padding: .7%;
@@ -121,9 +130,9 @@ input[type="text"]{
 }
 #positioned-element {
   position: absolute;
-    top: 120px;
-    right: 40%;
-    width: 100%;
+  top: 165px;
+  right: 25%;
+  width: 125%;
 }
 /*Button==============*/
 button {
