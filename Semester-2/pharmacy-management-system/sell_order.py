@@ -63,7 +63,7 @@ def sell_order(c_id, p_id, medicines):
 
 c_id = 2
 p_id = 1
-medicines = [(69, 1)]
+medicines = [(69, 1)] #(m_id ,qu)
 
 sell_order(c_id, p_id, medicines)
 

@@ -31,11 +31,17 @@
         <br>
         <h1>Sales</h1>
         <div class="search-container">
-            <form action="#">
-                <input type="search" placeholder="Search for Medicine" name="search">
+            <form id="search-form" method="post" action="{{url_for('perform_search_sales')}}">
+                <input type="text" id="search-input" placeholder="Search..." name="search_sales">
                 <button type="submit">Search</button>
             </form>
         </div>
+
+        <div class="search-results">
+            {{ search_results }}
+        </div>
+        
+        
     <br><br><br>
         <div>
             <h3>Search Results :</h3>

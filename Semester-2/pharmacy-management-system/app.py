@@ -56,11 +56,25 @@ def login():
         return redirect(url_for("home", error_message=error_message))
     
 
-@app.route('/search', methods=['POST'])
-def perform_search():
-    search_query = request.form.get('search')
+@app.route('/search_purchases', methods=['POST'])
+def perform_search_purches():
+    search_query = request.form.get('search_purchases')
     results = sh.search_in_mid(search_query)
     return render_template('purchases.html', search_results=results)
 
+
+
+@app.route('/search_sales',methods=['POST'])
+def perform_search_sales():
+    search_query = request.form.get('search_sales')
+    results = sh.search_in_mid(search_query)
+    return render_template('sales.html', search_results=results)
+
+
+
+
 if __name__ == "__main__":
     app.run()
+
+
+
