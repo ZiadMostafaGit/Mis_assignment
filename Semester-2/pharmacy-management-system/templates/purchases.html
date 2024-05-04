@@ -34,7 +34,7 @@
         <br>
         <div class="search-container">
             <form id="search-form" method="post" action="{{url_for('perform_search_purches')}}">
-                <input type="text" id="search-input" placeholder="Search..." name="search_purchases">
+                <input type="search" id="search-input" placeholder="Search for Medicine" name="search_purchases">
                 <button type="submit">Search</button>
             </form>
         </div>
@@ -45,16 +45,14 @@
         
         
 
-    <br><br>
+        <br><br>
         <div>
             <h3>Search Results :</h3>
             <table>
                 <thead>
                     <tr>
                         <th>M-ID</th>
-                        <th>Supplier-ID</th>
-                        <th>Medication Name</th>
-                        <th>Supplier Name</th>
+                        <th>Medicine Name</th>
                         <th>Quantity</th>
                         <th>Supplier Price</th>
                         <th>Price</th>
@@ -65,18 +63,20 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td><input type="text"></td>
                         <td>Name</td>
-                        <td><input type=""></td>
                         <td><input type="number"></td>
                         <td><input type="text"></td>
                         <td>$$$$</td>
-                        <td>0-0-0000</td>
+                        <td><input type="text"></td>
                         <td></td>
                     </tr>
                 
                 </tbody>
             </table>
+            <p id="positioned-element">
+                <input type="text" placeholder="Supplier-ID ">
+            </p>
+            <br><h3><u><p>Total Price :</p></u></h3><br>
             <p><button type="submit">Save </button> <button type="submit">Cancel</button></p>
     </main>
     <br><br>

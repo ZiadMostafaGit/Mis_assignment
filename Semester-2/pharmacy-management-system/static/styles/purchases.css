@@ -20,6 +20,12 @@ header {
   font-size: 15px;
   font-weight: bold;
 }
+#positioned-element {
+  position: absolute;
+    top: 165px;
+    right: 70%;
+    width: 35%;
+}
 footer {
   background-color: #333;
   color: white;
@@ -107,10 +113,10 @@ input[type="search"] {
   border: 12% #ccc;
   border-radius: 5px;
   font-size: 16px;
-  width: 25%;
+  width: 30%;
 }
 input[type="text"]{
-  padding: .7%;
+  padding: 1.7%;
   border: 12% #ccc;
   border-radius: 5px;
   font-size: 16px;

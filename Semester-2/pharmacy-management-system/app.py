@@ -1,5 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request,jsonify
 import search as sh
+import sell_order as so
 app = Flask(__name__)
 
 @app.route("/")
@@ -70,6 +71,21 @@ def perform_search_sales():
     results = sh.search_in_mid(search_query)
     return render_template('sales.html', search_results=results)
 
+
+
+
+@app.route('/sell_order', methods=['POST'])
+def sell_order():
+    c_p = int(request.form.get("c_p"))
+    p_id = int(request.form.get("p_id"))
+    Id = int(request.form.get("id"))
+    qu = int(request.form.get("Quantity"))
+    table = [(Id, qu)]  # Creating a list containing a single tuple
+    arr=[c_p,p_id,Id,qu,table]
+    query = so.sell_order(c_p, p_id, table)
+    test=str(arr)
+    
+    return render_template('sales.html', success_message=query,thedata=test)
 
 
 

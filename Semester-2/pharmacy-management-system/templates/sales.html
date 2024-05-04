@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales</title>
-    <header>
-        <h1> My Pharma</h1>
-    </header>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/sales.css') }}">
 </head>
 
 <body>
     <div class="container">
+        <header>
+            <h1>My Pharma</h1>
+        </header>
         <nav>
             <input id="button" type="checkbox">
             <label for="button"></label>
@@ -22,13 +22,12 @@
                 <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
                 <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
                 <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
-                <li><a href="{{ url_for('Unavailable_Medications') }}">Unavailable_Medications</a></li>
-                <li><a href="{{ url_for('missing') }}">missing</a></li>
-                <li><a href="{{ url_for('inventory') }}">inventory</a></li>
-                <li><a href="{{ url_for('cash') }}">cash</a></li>
+                <li><a href="{{ url_for('Unavailable_Medications') }}">Unavailable Medications</a></li>
+                <li><a href="{{ url_for('missing') }}">Missing</a></li>
+                <li><a href="{{ url_for('inventory') }}">Inventory</a></li>
+                <li><a href="{{ url_for('cash') }}">Cash</a></li>
             </ul>
         </nav>
-        <br>
         <h1>Sales</h1>
         <div class="search-container">
             <form id="search-form" method="post" action="{{url_for('perform_search_sales')}}">
@@ -40,9 +39,8 @@
         <div class="search-results">
             {{ search_results }}
         </div>
-        
-        
-    <br><br><br>
+
+        <br><br><br>
         <div>
             <h3>Search Results :</h3>
             <table>
@@ -58,7 +56,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
                     <tr>
                         <td>1</td>
                         <td>Name</td>
@@ -66,10 +63,12 @@
                         <td>0</td>
                         <td>0</td>
                         <td>0-0-0000</td>
-                        <td> <button type="submit">+</button> <button type="submit">-</button> <button type="submit">Reset</button></td>
+                        <td>
+                            <button type="submit">+</button>
+                            <button type="submit">-</button>
+                            <button type="submit">Reset</button>
+                        </td>
                     </tr>
-             
-                
                 </tbody>
             </table>
             <p id="positioned-element">
@@ -80,15 +79,36 @@
             <u><h3>Total Price : </h3></u>
             <br>
             <p>
-     <button type="submit">Save & Sell</button> <button type="submit">Cancel</button>
+
+                <form action="{{url_for('sell_order')}}" method="post">
+                    <input type="hidden" name="c_p" value="1">
+                    <input type="hidden" name="p_id" value="1">
+                    <input type="hidden" name="id" value="69">
+                    <input type="hidden" name="Quantity" value="1">
+                    <button type="submit">Save & Sell</button>
+                </form>
+                
+                <button type="submit">Cancel</button>
             </p>       
-        </nav>
-        </main>
+            <!-- Placing the success message here -->
+            <!-- Placing the success message here -->
+            {% if success_message %}
+            <div class="alert alert-success" role="alert">
+                {{ "the API is working" }}
+            </div>
+        {% else %}
+            <div class="alert alert-danger" role="alert">
+                {{ "the API is not working" }}
+            </div>
+        {% endif %}
+        <div>{{ thedata }}</div>
+        
+
+        </div>
     </div>
-    <br><br>
     <footer>
         <p>&copy; 2024 My Pharma</p>
     </footer>
-    
 </body>
+
 </html>

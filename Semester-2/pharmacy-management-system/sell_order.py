@@ -45,28 +45,34 @@ def sell_order(c_id, p_id, medicines):
                     cursor.execute('''UPDATE Medicine SET Quantity = ? WHERE M_ID = ?''', (updated_quantity, medicine_id))
                 else:
                     ch = False
-                    print(f"Not enough quantity available for {medicine_name}.")
+                    # print(f"Not enough quantity available for {medicine_name}.")
+                    conn.close()
+                    return False
             else:
                 ch = False
-                print(f"Medicine with ID {medicine_id} does not exist in the database.")
+                # print(f"Medicine with ID {medicine_id} does not exist in the database.")
+                conn.close()
+                return False
         if ch==True:
             cursor.execute('''UPDATE "Order" SET Total = ? WHERE O_ID = ?''', (total, order_id))
 
             conn.commit()
-            print("Order placed successfully!")
+            # print("Order placed successfully!")
+            conn.close()
+            return True
 
     except sqlite3.Error as e:
-        print("Error placing order:", e)
+        # print("Error placing order:", e)
+        conn.close()
+        return False
 
     finally:
         conn.close()
 
-c_id = 2
+c_id = 1
 p_id = 1
-medicines = [(69, 1)] #(m_id ,qu)
-
-sell_order(c_id, p_id, medicines)
-
+medicines = [(69, 200)] #(m_id ,qu)
+print(sell_order(c_id, p_id, medicines))
 
 
 
