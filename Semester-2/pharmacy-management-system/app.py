@@ -63,8 +63,6 @@ def perform_search_purches():
     results = sh.search_in_mid(search_query)
     return render_template('purchases.html', search_results=results)
 
-from flask import request, jsonify
-
 @app.route('/search_sales', methods=['POST'])
 def perform_search_sales():
     data = request.get_json()
