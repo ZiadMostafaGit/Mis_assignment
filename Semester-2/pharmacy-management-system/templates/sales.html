@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales</title>
+    <header>
+        <h1> My Pharma</h1>
+    </header>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/sales.css') }}">
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <h1>My Pharma</h1>
-        </header>
         <nav>
             <input id="button" type="checkbox">
-            <label for="button"></label>
+            <label id="L" for="button"></label>
             <ul>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('sales') }}">Sales</a></li>
@@ -28,21 +28,27 @@
                 <li><a href="{{ url_for('cash') }}">Cash</a></li>
             </ul>
         </nav>
+        <br><br>
         <h1>Sales</h1>
         <div class="search-container">
-            <form id="search-form" method="post" action="{{url_for('perform_search_sales')}}">
-                <input type="text" id="search-input" placeholder="Search..." name="search_sales">
+            <form action="#">
+               
+                    <input type="text" placeholder="Pharmacist id" id="Id">
+                    <input type="text" placeholder="Customer phone" id="Customerphone">
+                    <br><br>
+                    <input type="text" onkeyup="search(this.value)" placeholder="Search for Medicine" name="search" id="Search">
                 <button type="submit">Search</button>
             </form>
         </div>
-
-        <div class="search-results">
-            {{ search_results }}
-        </div>
-
         <br><br><br>
         <div>
             <h3>Search Results :</h3>
+            <table>
+                <thead>
+                   
+                </thead>
+                
+            </table>
             <table>
                 <thead>
                     <tr>
@@ -55,60 +61,31 @@
                         <th>Amount</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Name</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0-0-0000</td>
-                        <td>
-                            <button type="submit">+</button>
-                            <button type="submit">-</button>
-                            <button type="submit">Reset</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="tttable" style="background-color: rgb(206, 209, 212);"></tbody>
+                
+                <tbody id="ttable"></tbody>
             </table>
-            <p id="positioned-element">
-                <input type="text" placeholder="Pharmacist id"><br><br>
-                <input type="text" placeholder="Customer phone">
-            </p>
+     
+            
             <br>
-            <u><h3>Total Price : </h3></u>
+            <u>
+                <h3 id="totalPrice">Total Price: $0.00</h3>
+            </u>
+            
             <br>
             <p>
-
-                <form action="{{url_for('sell_order')}}" method="post">
-                    <input type="hidden" name="c_p" value="1">
-                    <input type="hidden" name="p_id" value="1">
-                    <input type="hidden" name="id" value="69">
-                    <input type="hidden" name="Quantity" value="1">
-                    <button type="submit">Save & Sell</button>
-                </form>
-                
-                <button type="submit">Cancel</button>
-            </p>       
-            <!-- Placing the success message here -->
-            <!-- Placing the success message here -->
-            {% if success_message %}
-            <div class="alert alert-success" role="alert">
-                {{ "the API is working" }}
-            </div>
-        {% else %}
-            <div class="alert alert-danger" role="alert">
-                {{ "the API is not working" }}
-            </div>
-        {% endif %}
-        <div>{{ thedata }}</div>
-        
-
+                <button type="submit" id="sell">Save & Sell</button> <button type="submit" id="cancelBtn">Cancel</button>
+            </p>
+            </nav>
+            </main>
         </div>
+        <br><br>
+        <footer>
+            <p>&copy; 2024 My Pharma</p>
+        </footer>
     </div>
-    <footer>
-        <p>&copy; 2024 My Pharma</p>
-    </footer>
-</body>
+    <script src="{{ url_for('static', filename='js/sales.js') }}"></script>
+
+ </body>
 
 </html>

@@ -63,16 +63,31 @@ def perform_search_purches():
     results = sh.search_in_mid(search_query)
     return render_template('purchases.html', search_results=results)
 
+from flask import request, jsonify
 
-
-@app.route('/search_sales',methods=['POST'])
+@app.route('/search_sales', methods=['POST'])
 def perform_search_sales():
-    search_query = request.form.get('search_sales')
+    data = request.get_json()
+    search_query = data.get('search_sales')
+
+    if not search_query:
+        # Handle the case when search_query is None or an empty string
+        return jsonify([])
+
     results = sh.search_in_mid(search_query)
-    return render_template('sales.html', search_results=results)
-
-
-
+    formatted_results = [
+        {
+            "id": result[0],
+            "name": result[1],
+            "quantity": float(result[3]),
+            "price": float(result[2]),
+            "quantitySold": int(result[4]),
+            "category": result[5],
+            "expiryDate": result[6]
+        }
+        for result in results
+    ]
+    return jsonify(formatted_results)
 
 @app.route('/sell_order', methods=['POST'])
 def sell_order():
