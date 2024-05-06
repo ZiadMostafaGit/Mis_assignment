@@ -48,51 +48,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function search(query) {
         let table = "";
-
-        if (query.trim() !== "") {
-            fetch('/search_sales', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ search_sales: query }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(medicine => {
-                    table += `
-                        <tr>
-                            <td>${medicine[0]}</td>
-                            <td>${medicine[1]}</td>
-                            <td>${medicine[3]}</td>
-                            <td style="display: flex; justify-content: space-between;">
-                                <span class="quantity-sold">${medicine[4] || 0}</span>
-                            </td>
-                            <td>${medicine[2]}</td>
-                            <td>${medicine[6]}</td>
-                            <td>
-                                <button class="addBtn">Add</button>
-                            </td>
-                        </tr>
-                    `;
-                });
-
-                searchh.innerHTML = table;
-                calculateTotalPrice();
-                const addBtns = document.querySelectorAll('.addBtn');
-                addBtns.forEach((btn, index) => {
-                    btn.addEventListener('click', function () {
-                        displayedResults.push(data[index]);
-                        renderSearchResults(displayedResults);
-                        calculateTotalPrice();
-                    });
-                });
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+    
+        // Clear the search results list if the query is empty
+        if (query.trim() === "") {
+            searchh.innerHTML = '';
+            return;
         }
+    
+        fetch('/search_sales', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ search_sales: query }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Clear the search results list
+            searchh.innerHTML = '';
+    
+            data.forEach(medicine => {
+                table += `
+                    <tr>
+                        <td>${medicine[0]}</td>
+                        <td>${medicine[1]}</td>
+                        <td>${medicine[3]}</td>
+                        <td style="display: flex; justify-content: space-between;">
+                            <span class="quantity-sold">${medicine[4] || 0}</span>
+                        </td>
+                        <td>${medicine[2]}</td>
+                        <td>${medicine[6]}</td>
+                        <td>
+                            <button class="addBtn">Add</button>
+                        </td>
+                    </tr>
+                `;
+            });
+    
+            searchh.innerHTML = table;
+            calculateTotalPrice();
+            const addBtns = document.querySelectorAll('.addBtn');
+            addBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function () {
+                    displayedResults.push(data[index]);
+                    renderSearchResults(displayedResults);
+                    calculateTotalPrice();
+                });
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
+    
+    
 
     searchInput.addEventListener('keyup', function () {
         search(this.value);
