@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchResults = document.getElementById('ttable');
     const searchh = document.getElementById('tttable');
     let totalSalesPrice = 0;
+    let displayedResults = [];
 
     function calculateTotalPrice() {
         totalSalesPrice = 0;
@@ -45,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    let displayedResults = [];
-
     function search(query) {
         let table = "";
 
@@ -71,12 +70,23 @@ document.addEventListener("DOMContentLoaded", function () {
                             </td>
                             <td>${medicine[2]}</td>
                             <td>${medicine[6]}</td>
+                            <td>
+                                <button class="addBtn">Add</button>
+                            </td>
                         </tr>
                     `;
                 });
 
                 searchh.innerHTML = table;
                 calculateTotalPrice();
+                const addBtns = document.querySelectorAll('.addBtn');
+                addBtns.forEach((btn, index) => {
+                    btn.addEventListener('click', function () {
+                        displayedResults.push(data[index]);
+                        renderSearchResults(displayedResults);
+                        calculateTotalPrice();
+                    });
+                });
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -102,18 +112,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 </td>
                 <td>${result[2]}</td>
                 <td>${result[6]}</td>
+                <td>
+                    <button class="increaseBtn">+</button>
+                    <button class="decreaseBtn">-</button>
+                    <button class="resetBtn">Reset</button>
+                </td>
             `;
 
-            const increaseBtn = document.createElement('button');
-            increaseBtn.textContent = '+';
+            const increaseBtn = row.querySelector('.increaseBtn');
             increaseBtn.addEventListener('click', function () {
                 result[4] = (result[4] || 0) + 1;
                 row.querySelector('.quantity-sold').textContent = result[4];
                 calculateTotalPrice();
             });
 
-            const decreaseBtn = document.createElement('button');
-            decreaseBtn.textContent = '-';
+            const decreaseBtn = row.querySelector('.decreaseBtn');
             decreaseBtn.addEventListener('click', function () {
                 if (result[4] && result[4] > 0) {
                     result[4]--;
@@ -122,8 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            const resetBtn = document.createElement('button');
-            resetBtn.textContent = 'Reset';
+            const resetBtn = row.querySelector('.resetBtn');
             resetBtn.addEventListener('click', function () {
                 const index = displayedResults.indexOf(result);
                 if (index > -1) {
@@ -132,12 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     calculateTotalPrice();
                 }
             });
-
-            const buttonCell = document.createElement('td');
-            buttonCell.appendChild(increaseBtn);
-            buttonCell.appendChild(decreaseBtn);
-            buttonCell.appendChild(resetBtn);
-            row.appendChild(buttonCell);
 
             searchResults.appendChild(row);
         });
