@@ -1,6 +1,9 @@
 from flask import Flask, redirect, url_for, render_template, request,jsonify
 import search as sh
 import sell_order as so
+import fetch_table_data as fd
+import fetch_missing_medicines as fm
+import fetch_near_expired_medicines as fn
 app = Flask(__name__)
 
 @app.route("/")
@@ -33,9 +36,9 @@ def cash():
     return render_template("cash.html")
 
 
-@app.route("/Unavailable_Medications")
-def Unavailable_Medications():
-    return render_template("Unavailable_Medications.html")
+@app.route("/Expire")
+def Expire():
+    return render_template("Expire.html")
 
 @app.route("/inventory")
 def inventory():
@@ -78,6 +81,22 @@ def perform_search_sales():
     return jsonify(results)
 
 
+
+
+@app.route('/fetch_data', methods=['GET'])
+def fetch_data():
+    table = request.args.get('table')
+    data = fd.fetch_table_data(table)
+    return jsonify(data)
+
+
+
+
+@app.route('/fetch_missing', methods=['GET'])
+def fetch_missing():
+    missing_data = fm.fetch_missing_medicines()
+    return jsonify(missing_data)
+
 @app.route('/sell_order', methods=['POST'])
 def sell_order():
     try:
@@ -101,6 +120,18 @@ def sell_order():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+
+@app.route('/fetch_near_expired', methods=['GET'])
+def fetch_near_expired():
+    near_expired_data = fn.fetch_near_expired_medicines()
+    return jsonify(near_expired_data)
+
+
+
+
+
 
 
 
