@@ -76,18 +76,31 @@ def perform_search_sales():
 
     results = sh.search_in_mid(search_query)
     return jsonify(results)
+
+
 @app.route('/sell_order', methods=['POST'])
 def sell_order():
-    c_p = int(request.form.get("c_p"))
-    p_id = int(request.form.get("p_id"))
-    Id = int(request.form.get("id"))
-    qu = int(request.form.get("Quantity"))
-    table = [(Id, qu)]  # Creating a list containing a single tuple
-    arr=[c_p,p_id,Id,qu,table]
-    query = so.sell_order(c_p, p_id, table)
-    test=str(arr)
-    
-    return render_template('sales.html', success_message=query,thedata=test)
+    try:
+        # Extract data from the request
+        data = request.json
+        c_p = data.get("c_p")
+        p_id = data.get("p_id")
+        orderData = data.get("orderData")
+
+        # Validate the received data
+        if not all(isinstance(item, int) for item in [c_p, p_id]) or not isinstance(orderData, list):
+            return jsonify({"error": "Invalid request data"}), 400
+
+        # Prepare the list of tuples for processing
+        table = [(item.get("m_id"), item.get("quantitySold")) for item in orderData]
+
+        # Call the sell_order function from the backend with the received data
+        query = so.sell_order(c_p, p_id, table)
+
+        return jsonify({"success_message": query}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 
