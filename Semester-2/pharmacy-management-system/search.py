@@ -25,5 +25,5 @@ def search_in_mid(letters):
 
 
 
-letters= "Abimol"
-print(search_in_mid(letters))
+# letters= "Abimol"
+# print(search_in_mid(letters))

@@ -61,7 +61,7 @@ def sell_order(c_id, p_id, medicines):
     finally:
         conn.close()
 
-c_id = 1
-p_id = 1
-medicines = [(69, 1),(121,5)] #(m_id ,qu)
-print(sell_order(c_id, p_id, medicines))
+# c_id = 1
+# p_id = 1
+# medicines = [(69, 1),(121,5)] #(m_id ,qu)
+# print(sell_order(c_id, p_id, medicines))
