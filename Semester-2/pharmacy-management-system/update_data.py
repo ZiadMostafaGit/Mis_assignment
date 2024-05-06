@@ -16,11 +16,11 @@ def update_data(table, condition_column, condition_value, column, new_value):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-# Test the update_data function to modify a specific record
-table='customer'
-column='C_Phone'
-new_value='00100000'
-condition_column='C_id'
-condition_value=2
+# # Test the update_data function to modify a specific record
+# table='customer'
+# column='C_Phone'
+# new_value='00100000'
+# condition_column='C_id'
+# condition_value=2
 
-update_data(table, condition_column, condition_value, column, new_value)
+# update_data(table, condition_column, condition_value, column, new_value)

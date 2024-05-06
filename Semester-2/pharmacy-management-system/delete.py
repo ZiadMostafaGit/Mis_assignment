@@ -19,9 +19,9 @@ def delete(searchBy, table, letters):
         if conn:
             conn.close()
 
-# Example usage
-searchBy = "purchase_id"
-table = "purchase"
-letters = '2'
-success = delete(searchBy, table, letters)
-print("Deletion successful:", success)
+# # Example usage
+# searchBy = "purchase_id"
+# table = "purchase"
+# letters = '2'
+# success = delete(searchBy, table, letters)
+# print("Deletion successful:", success)

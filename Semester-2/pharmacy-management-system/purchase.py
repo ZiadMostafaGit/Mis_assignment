@@ -55,11 +55,11 @@ def purchase_order(s_id, medicines):
         # Close the connection
         conn.close()
 
-# Example usage
-s_id = 1  # Example supplier ID
+# # Example usage
+# s_id = 1  # Example supplier ID
 
-# Example medicines to purchase: (Medicine_ID, Quantity, Purchase_price, Expire_Date)
-medicines = [(226, 10, 5.5, '06/2026')]  # Example medicines to purchase with expire date
+# # Example medicines to purchase: (Medicine_ID, Quantity, Purchase_price, Expire_Date)
+# medicines = [(226, 10, 5.5, '06/2026')]  # Example medicines to purchase with expire date
 
-# Call the function to place the purchase order
-purchase_order(s_id, medicines)
+# # Call the function to place the purchase order
+# purchase_order(s_id, medicines)

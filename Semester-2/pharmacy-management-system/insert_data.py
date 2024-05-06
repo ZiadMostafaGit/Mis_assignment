@@ -32,7 +32,7 @@ def insert_data(table_name, data):
         # Close the connection
         if conn:
             conn.close()
-# Example usage
-table_name = "purchase"
-data = {"purchase_id": 4, "S_ID": 1,"S_totalPrice":222,"S_time":""}
-insert_data(table_name, data)
+# # Example usage
+# table_name = "purchase"
+# data = {"purchase_id": 4, "S_ID": 1,"S_totalPrice":222,"S_time":""}
+# insert_data(table_name, data)
