@@ -15,17 +15,17 @@
     <div class="container">
         <nav>
             <input id="button" type="checkbox">
-            <label id="L" for="button"></label>
+            <label for="button"></label>
             <ul>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('sales') }}">Sales</a></li>
                 <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
                 <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
                 <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
-                <li><a href="{{ url_for('Unavailable_Medications') }}">Unavailable Medications</a></li>
-                <li><a href="{{ url_for('missing') }}">Missing</a></li>
-                <li><a href="{{ url_for('inventory') }}">Inventory</a></li>
-                <li><a href="{{ url_for('cash') }}">Cash</a></li>
+                <li><a href="{{ url_for('Unavailable_Medications') }}">Unavailable_Medications</a></li>
+                <li><a href="{{ url_for('missing') }}">missing</a></li>
+                <li><a href="{{ url_for('inventory') }}">inventory</a></li>
+                <li><a href="{{ url_for('cash') }}">cash</a></li>
             </ul>
         </nav>
         <br><br>
@@ -85,7 +85,6 @@
         </footer>
     </div>
     <script src="{{ url_for('static', filename='js/sales.js') }}"></script>
-
  </body>
 
 </html>
