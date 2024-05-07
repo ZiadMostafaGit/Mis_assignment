@@ -6,6 +6,7 @@ import fetch_missing_medicines as fm
 import fetch_near_expired_medicines as fn
 import purchase as pr
 import sales_invoices as si
+import purcahse_invoices as pi
 app = Flask(__name__)
 
 @app.route("/")
@@ -176,8 +177,14 @@ def handle_purchase_order():
         return jsonify({'error': str(e)}), 500
 
 
+# API endpoint to fetch purchase invoices
+@app.route('/api/purchase_invoices')
+def get_purchase_invoices():
+    invoices = pi.fetch_purchase_invoices()  # Call the function to fetch purchase invoices
+    return jsonify(invoices)
+
+
 
 if __name__ == "__main__":
     app.run()
-
 

@@ -36,6 +36,6 @@ def fetch_table_data(table):
     finally:
         conn.close()
 
-table="customer"
-x = fetch_table_data(table)
-print(x)
+# table="customer"
+# x = fetch_table_data(table)
+# print(x)

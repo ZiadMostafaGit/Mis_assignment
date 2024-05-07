@@ -40,10 +40,10 @@ def fetch_sales_invoices():
         conn.close()  # Closing the database connection after the operation is complete
 
 
-# Example usage
-invoices = fetch_sales_invoices()  # Calling the fetch_sales_invoices function to get invoices
-for invoice in invoices:  # Iterating through each invoice in the list of invoices
-    print(invoice)  # Printing each invoice
+# # Example usage
+# invoices = fetch_sales_invoices()  # Calling the fetch_sales_invoices function to get invoices
+# for invoice in invoices:  # Iterating through each invoice in the list of invoices
+#     print(invoice)  # Printing each invoice
 
 
 

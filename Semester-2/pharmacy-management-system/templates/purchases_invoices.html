@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchases invoices </title>
+    <title>Purchases Invoices</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/purchases_invoices.css') }}">
 </head>
 
 <body>
     <header>
-        <h1> My Pharma</h1>
-        </nav>
+        <h1>My Pharma</h1>
     </header>
     <nav>
         <input id="button" type="checkbox">
@@ -23,63 +22,41 @@
             <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
             <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
             <li><a href="{{ url_for('Expire') }}">Expire</a></li>
-            <li><a href="{{ url_for('missing') }}">missing</a></li>
-            <li><a href="{{ url_for('inventory') }}">inventory</a></li>
-            
+            <li><a href="{{ url_for('missing') }}">Missing</a></li>
+            <li><a href="{{ url_for('inventory') }}">Inventory</a></li>
         </ul>
     </nav>
     <br><br>
     <div>
-        <h1>Purchases invoices</h1>
-        <p>
-            <input type="date" >
-        </p>
+        <h1>Purchases Invoices</h1>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>M-ID</th>
-                    <th>S-ID</th>
-                    <th>Medication Name</th>
+                    <th>Supplier ID</th>
+                    <th>Total Price($)</th>
+                    <th>Medicine ID</th>
+                    <th>Medicine Name</th>
                     <th>Quantity</th>
-                    <th> Supplier Price($)</th>
-                    <th>Validity date</th>
-                    <th>Total</th>
+                    <th>Supplier Price($)</th>
+                    <th>Expiration Date</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>Name</td>
-                    <td>0</td>
-                    <td>$$$$</td>
-                    <td>0-0-0000</td>
-                    <td>$$$$</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>Name</td>
-                    <td>0</td>
-                    <td>$$$$</td>
-                    <td>0-0-0000</td>
-                    <td>$$$$</td>
-                </tr>
-            
+                <!-- Table body will be populated dynamically -->
             </tbody>
         </table>
         <p>
             <button type="submit">Print</button>
         </p>
     </div>
-    </main>
-    <br><br>
+
     <footer>
         <p>&copy; 2024 My Pharma</p>
     </footer>
+
+    <!-- Include purchases_invoices.js -->
+    <script src="{{ url_for('static', filename='js/purchases_invoices.js') }}"></script>
 </body>
 
 </html>
