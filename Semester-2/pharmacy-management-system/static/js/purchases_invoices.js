@@ -13,8 +13,8 @@ function populateTable(data) {
                 <td>${medicine[0]}</td>
                 <td>${medicine[1]}</td>
                 <td>${medicine[2]}</td>
-                <td>${medicine[3]}</td>
                 <td>${medicine[4]}</td>
+                <td>${medicine[3]}</td>
             `;
             tableBody.appendChild(row);
         });
