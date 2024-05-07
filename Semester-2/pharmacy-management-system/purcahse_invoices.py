@@ -40,10 +40,10 @@ def fetch_purchase_invoices():
     finally:
         conn.close()
 
-# Example usage
-purchase_invoices = fetch_purchase_invoices()
-for invoice in purchase_invoices:
-    print(invoice)
+# # Example usage
+# purchase_invoices = fetch_purchase_invoices()
+# for invoice in purchase_invoices:
+#     print(invoice)
 
 
 
