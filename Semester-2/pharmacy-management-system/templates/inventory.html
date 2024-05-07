@@ -1,54 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inventory</title>
+    <title>Inventory</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <script src="{{ url_for('static', filename='js/inventory.js') }}"></script>
-  </head>
-
-  <body>
-
+</head>
+<body>
     <nav>
-      <input id="button" type="checkbox">
-      <label for="button"></label>
-      <ul>
-          <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li><a href="{{ url_for('sales') }}">Sales</a></li>
-          <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
-          <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
-          <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
-          <li><a href="{{ url_for('Expire') }}">Expire</a></li>
-          <li><a href="{{ url_for('missing') }}">missing</a></li>
-          <li><a href="{{ url_for('inventory') }}">inventory</a></li>
-          
-      </ul>
-  </nav>
-      <h1>Inventory</h1>
-
-      <div>
-  
-    <table>
-      <thead>
-        <tr>
-          <th>M_ID</th>
-          <th>M_Name</th>
-          <th>Quantity</th>
-          <th>Category</th>
-          <th>Unit_Price</th>
-          <th>Expire Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Table body will be dynamically populated by JavaScript -->
-      </tbody>
-    </table>
-  </div>
-
-  <footer>
-    <p>©2024 My Pharma</p>
-  </footer>
-
+        <input id="button" type="checkbox">
+        <label for="button"></label>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('sales') }}">Sales</a></li>
+            <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
+            <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
+            <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
+            <li><a href="{{ url_for('Expire') }}">Expire</a></li>
+            <li><a href="{{ url_for('missing') }}">Missing</a></li>
+            <li><a href="{{ url_for('inventory') }}">Inventory</a></li>
+        </ul>
+    </nav>
+    <h1>Inventory</h1>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>M_ID</th>
+                    <th>M_Name</th>
+                    <th>Unit_Price</th>
+                    <th>Quantity</th>
+                    <th>Units</th>
+                    <th>Category</th>
+                    <th>Expire Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table body will be dynamically populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <p>©2024 My Pharma</p>
+    </footer>
 </body>
 </html>

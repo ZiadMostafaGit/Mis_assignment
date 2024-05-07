@@ -13,8 +13,11 @@ def fetch_near_expired_medicines():
         all_medicines = cur.fetchall()
         near_expired_medicines = []
         for medicine in all_medicines:
-            expire_month, expire_year = map(int, medicine[2].split('/'))
-            expire_date = datetime(expire_year, expire_month, 1)  # Set day to 1 for comparison
+            expire_date_parts = medicine[2].split('/')
+            if len(expire_date_parts) == 3:
+                expire_date = datetime.strptime(medicine[2], '%d/%m/%Y')  # Parse the date string
+            else:
+                expire_date = datetime.strptime(medicine[2], '%m/%Y')  # Parse the date string without day
             if expire_date <= expiration_date:
                 near_expired_medicines.append(medicine)
         return near_expired_medicines
@@ -23,3 +26,5 @@ def fetch_near_expired_medicines():
         return []
     finally:
         conn.close()
+
+# print(fetch_near_expired_medicines())
