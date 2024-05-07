@@ -5,6 +5,7 @@ import fetch_table_data as fd
 import fetch_missing_medicines as fm
 import fetch_near_expired_medicines as fn
 import purchase as pr
+import sales_invoices as si
 app = Flask(__name__)
 
 @app.route("/")
@@ -130,6 +131,18 @@ def sell_order():
 def fetch_near_expired():
     near_expired_data = fn.fetch_near_expired_medicines()
     return jsonify(near_expired_data)
+
+
+
+
+# API endpoint to fetch sales invoices
+@app.route('/api/sales_invoices')
+def get_sales_invoices():
+    invoices = si.fetch_sales_invoices()
+    return jsonify(invoices)
+
+
+
 
 
 

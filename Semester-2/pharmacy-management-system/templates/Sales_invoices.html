@@ -1,0 +1,70 @@
+<!-- sales_invoice.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales invoices </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/Sales_invoices.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1> My Pharma</h1>
+        <!-- <nav> ... </nav> -->
+    </header>
+    <div class="container">
+        <nav>
+            <input id="button" type="checkbox">
+            <label for="button"></label>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('sales') }}">Sales</a></li>
+                <li><a href="{{ url_for('purchases') }}">Purchases</a></li>
+                <li><a href="{{ url_for('sales_invoices') }}">Sales invoices</a></li>
+                <li><a href="{{ url_for('purchases_invoices') }}">Purchases invoices</a></li>
+                <li><a href="{{ url_for('Expire') }}">Expire</a></li>
+                <li><a href="{{ url_for('missing') }}">missing</a></li>
+                <li><a href="{{ url_for('inventory') }}">inventory</a></li>
+                
+            </ul>
+        </nav>
+    <br><br>
+    <div>
+        <h1>Sales Invoices</h1>
+        <p><input type="date"></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Pharmacist ID</th>
+                    <th>Customer ID</th>
+                    <th>Medication Name</th>
+                    <th>Quantity sold</th>
+                    <th>Price($)</th>
+                    <th>Unit</th>
+                    <th>Total-M</th>
+                    <th>Total invoice</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table body will be populated dynamically -->
+            </tbody>
+        </table>
+        <p>
+            <button type="submit">Print</button>
+        </p>
+    </div>
+    <!-- <main> ... </main> -->
+    <br><br>
+    <footer>
+        <p>&copy; 2024 My Pharma</p>
+    </footer>
+
+    <!-- Include sales_invoices.js -->
+    <script src="{{ url_for('static', filename='js/sales_invoices.js') }}"></script>
+</body>
+
+</html>
