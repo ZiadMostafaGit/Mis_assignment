@@ -9,7 +9,7 @@ public class EcommerceGUI extends JFrame {
     private JButton addButton, placeOrderButton;
     private JTextArea cartArea;
     private project ecommerceSystem;
-    private project.Cart cart; // Change this line
+    private project.Cart cart;
 
 
     public EcommerceGUI() {
@@ -69,20 +69,20 @@ public class EcommerceGUI extends JFrame {
 
             if (ecommerceSystem == null) {
                 ecommerceSystem = new project();
-                project.Customer customer = ecommerceSystem.new Customer(customerId, customerName, customerAddress); // Change this line
-                cart = ecommerceSystem.new Cart(customer.getCustomerId()); // Change this line
+                project.Customer customer = ecommerceSystem.new Customer(customerId, customerName, customerAddress); 
+                cart = ecommerceSystem.new Cart(customer.getCustomerId()); 
             }
 
-            project.Product product; // Change this line
+            project.Product product; 
             switch (productName) {
                 case "Smartphone":
-                    product = ecommerceSystem.new ElectronicProduct(1, "Smartphone", 599.99, "Samsung", 1); // Change this line
+                    product = ecommerceSystem.new ElectronicProduct(1, "Smartphone", 599.99, "Samsung", 1);
                     break;
                 case "T-Shirt":
-                    product = ecommerceSystem.new ClothingProduct(2, "T-Shirt", 19.99, "Medium", "Cotton"); // Change this line
+                    product = ecommerceSystem.new ClothingProduct(2, "T-Shirt", 19.99, "Medium", "Cotton");
                     break;
                 case "OOP":
-                    product = ecommerceSystem.new BookProduct(3, "OOP", 39.99, "O'Reilly", "X Publications"); // Change this line
+                    product = ecommerceSystem.new BookProduct(3, "OOP", 39.99, "O'Reilly", "X Publications");
                     break;
                 default:
                     return;
