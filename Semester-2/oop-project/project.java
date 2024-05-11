@@ -176,67 +176,66 @@ public class project{
     }
 
 
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-    project ecommerceSystem = new project(); // Create an instance of the outer class
+    public static void main(String[] args) {
 
-    System.out.println("Welcome to the E-Commerce System!");
+        Scanner scanner = new Scanner(System.in);
+        project ecommerceSystem = new project(); // Create an instance of the outer class
 
-    System.out.print("Please enter your id: ");
-    int customerId = scanner.nextInt();
-    scanner.nextLine(); // Consume newline character
+        System.out.println("Welcome to the E-Commerce System!");
 
-    System.out.print("Please enter your name: ");
-    String customerName = scanner.nextLine();
+        System.out.print("Please enter your id: ");
+        int customerId = scanner.nextInt();
+        scanner.nextLine(); // Consume newline character
 
-    System.out.print("Please enter your address: ");
-    String customerAddress = scanner.nextLine();
+        System.out.print("Please enter your name: ");
+        String customerName = scanner.nextLine();
 
-    Customer customer = ecommerceSystem.new Customer(customerId, customerName, customerAddress); // Use the instance to create nested class instances
-    Cart cart = ecommerceSystem.new Cart(customer.getCustomerId());
+        System.out.print("Please enter your address: ");
+        String customerAddress = scanner.nextLine();
 
-    // Create products
-    ElectronicProduct smartphone = ecommerceSystem.new ElectronicProduct(1, "Smartphone", 599.99, "Samsung", 1);
-    ClothingProduct tShirt = ecommerceSystem.new ClothingProduct(2, "T-Shirt", 19.99, "Medium", "Cotton");
-    BookProduct oopBook = ecommerceSystem.new BookProduct(3, "OOP", 39.99, "O'Reilly", "X Publications");
+        Customer customer = ecommerceSystem.new Customer(customerId, customerName, customerAddress);
+        Cart cart = ecommerceSystem.new Cart(customer.getCustomerId());
+
+        // Create products
+        ElectronicProduct smartphone = ecommerceSystem.new ElectronicProduct(1, "Smartphone", 599.99, "Samsung", 1);
+        ClothingProduct tShirt = ecommerceSystem.new ClothingProduct(2, "T-Shirt", 19.99, "Medium", "Cotton");
+        BookProduct oopBook = ecommerceSystem.new BookProduct(3, "OOP", 39.99, "O'Reilly", "X Publications");
 
 
-            System.out.print("How many products you want to add to your cart? ");
-            int numProducts = scanner.nextInt();
+                System.out.print("How many products you want to add to your cart? ");
+                int numProducts = scanner.nextInt();
 
-            for (int i = 0; i < numProducts; i++) {
-                System.out.println("Which product would you like to add? 1- Smartphone 2- T-Shirt 3- OOP");
-                int choice = scanner.nextInt();
-                switch (choice) {
-                    case 1:
-                        cart.addProduct(smartphone);
-                        break;
-                    case 2:
-                        cart.addProduct(tShirt);
-                        break;
-                    case 3:
-                        cart.addProduct(oopBook);
-                        break;
-                    default:
-                        System.out.println("Invalid choice!");
-                        i--;
-                        break;
+                for (int i = 0; i < numProducts; i++) {
+                    System.out.println("Which product would you like to add? 1- Smartphone 2- T-Shirt 3- OOP");
+                    int choice = scanner.nextInt();
+                    switch (choice) {
+                        case 1:
+                            cart.addProduct(smartphone);
+                            break;
+                        case 2:
+                            cart.addProduct(tShirt);
+                            break;
+                        case 3:
+                            cart.addProduct(oopBook);
+                            break;
+                        default:
+                            System.out.println("Invalid choice!");
+                            i--;
+                            break;
+                    }
                 }
-            }
 
-            double totalPrice = cart.calculatePrice();
-            System.out.println("Your total is $" + totalPrice + ". Would you like to place the order? 1- Yes 2- No");
-            int placeOrder = scanner.nextInt();
-            if (placeOrder == 1) {
-                cart.placeOrder();
-            } else {
-                System.out.println("Order cancelled.");
-            }
+                double totalPrice = cart.calculatePrice();
+                System.out.println("Your total is $" + totalPrice + ". Would you like to place the order? 1- Yes 2- No");
+                int placeOrder = scanner.nextInt();
+                if (placeOrder == 1) {
+                    cart.placeOrder();
+                } else {
+                    System.out.println("Order cancelled.");
+                }
 
-            scanner.close();
-        }
-
+                scanner.close();
+    }
 
 
-
-}
+}   
